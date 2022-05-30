@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
 <html>
     <head>
         <title>Unico</title>
@@ -19,7 +22,7 @@
                     <b><h2><p class="index">Accedi</p></h2></b>
                     <br><br>
                     <h5><p class="index">E-mail</p></h5><br>
-                    <p class="index"><input type="text" name="email" placeholder="error@mail.com" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Esempio error@mail.com"></p><br><br>
+                    <p class="index"><input type="text" name="email" placeholder="error@mail.com"></p><br><br>
                     <h5><p class="index">Password</p></h2><br>
                     <p class="index"><input type="password" name="password" placeholder="**********"></p><br><br>
                     <h5><p class="index"><input type=checkbox value="recupera_password"><u>Recupera Password</u></p></p><br><br><br>
@@ -27,6 +30,8 @@
                     <br><br><br>
                 </form>
             </div>
+            <br><br>
+            <font color="red"><h2>Utente non trovato</h2></font>
         </center>
     </body>
 </html>
