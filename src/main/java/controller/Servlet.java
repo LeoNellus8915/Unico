@@ -27,7 +27,7 @@ public class Servlet extends HttpServlet
 			if (main.Login(email, password) == true)
 			{
 				session.setAttribute("Login", 1);
-				request.setAttribute("Utente", email);
+				session.setAttribute("Utente", email);
 				disp = request.getRequestDispatcher("home.jsp");
 			}
 			else

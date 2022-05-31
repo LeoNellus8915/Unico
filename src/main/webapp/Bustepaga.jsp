@@ -59,41 +59,56 @@
             	<button class="esci">ESCI</button>
             </form>
         </div><br>
-        <p class="utente">Home > <%String x = (String)session.getAttribute("Utente");
-        							out.println(x);%></p><br>
+        <p class="utente"> <a href="home.jsp">Home</a> > Buste paga</p><br>
         <br><br>
         <div class="contenitore">
             <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%;">
-                <img src="Immagini/a.svg"><br><br><br>
-                <p class="categorie">Modulo Presenze</p>
-            </div>
-            <a href="Bustepaga.jsp"><div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img src="Immagini/b.svg"><br><br><br>
-                <p class="categorie">Buste Paga&nbsp&nbsp&nbsp&nbsp</p>
-            </div></a>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img src="Immagini/c.svg"><br><br><br>
-                <p class="categorie">Certificazione Unica</p>
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Gennaio</p>
             </div>
             <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img src="Immagini/d.svg"><br><br><br>
-                <p class="categorie">Commesse</p>
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Febbraio</p>
+            </div>
+            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Marzo</p>
+            </div>
+            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Aprile</p>
             </div>
             <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
-                <img src="Immagini/e.svg"><br><br><br>
-                <p class="categorie">Certificazioni</p>
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Maggio</p>
             </div>
             <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img src="Immagini/f.svg"><br><br><br>
-                <p class="categorie">Corso Sicurezza</p>
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Giugno</p>
             </div>
             <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img style="margin-top: 20%;" src="Immagini/g.svg"><br><br><br>
-                <p class="categorie">Visita Medica&nbsp&nbsp</p>
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Luglio</p>
             </div>
             <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img style="margin-top: 20%;" src="Immagini/h.svg"><br><br><br>
-                <p class="categorie">Profilo & CV&nbsp&nbsp</p>
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Agosto</p>
+            </div>
+            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Settembre</p>
+            </div>
+            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Ottobre</p>
+            </div>
+            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Novembre</p>
+            </div>
+            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p class="categorie">Dicembre</p>
             </div>
         </div>
     </body>
