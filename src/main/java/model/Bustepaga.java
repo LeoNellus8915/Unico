@@ -1,16 +1,14 @@
 package model;
 
-import java.sql.Date;
-
 public class Bustepaga
 {
 	private int id;
 	private String mese;
-	private Date data;
+	private String data;
 	
 	Bustepaga(){}
 	
-	Bustepaga (int id, String mese, Date data)
+	Bustepaga (int id, String mese, String data)
 	{
 		this.id = id;
 		this.mese = mese;
@@ -33,11 +31,11 @@ public class Bustepaga
 	{
 		return mese;
 	}
-	public void setData (Date data)
+	public void setData (String data)
 	{
 		this.data = data;
 	}
-	public Date getData()
+	public String getData()
 	{
 		return data;
 	}

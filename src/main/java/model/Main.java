@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -7,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
 import model.Utente;
+import model.Bustepaga;
 
 public class Main
 {
@@ -65,8 +67,24 @@ public class Main
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		Query q = controllo.createQuery("update Bustepaga set data = '" + data + "' where  mese = '"+ mese + "'");
+		Query q = controllo.createQuery("update Bustepaga set data = '" + data + "' where mese = '"+ mese + "' and data = 'null'");
 		q.executeUpdate();
 		controllo.close();
+	}
+	public ArrayList getData()
+	{
+		Bustepaga busta;
+		ArrayList<String> data = new ArrayList<String>();
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("from Bustepaga");
+		List buste = q.list();
+		for (int c=0; c<buste.size(); c++)
+        {
+        	busta = (Bustepaga) buste.get(c);
+        	data.add(busta.getData());
+        }
+		controllo.close();
+		return data;
 	}
 }
