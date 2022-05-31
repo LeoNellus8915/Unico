@@ -17,7 +17,7 @@
             </div>
 
             <div class="div1">
-                <form method="POST" action="Login">
+                <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Accedi</p></h2></b>
                     <br><br>
@@ -26,6 +26,7 @@
                     <h5><p class="index">Password</p></h2><br>
                     <p class="index"><input type="password" name="password" placeholder="**********"></p><br><br>
                     <h5><p class="index"><input type=checkbox value="recupera_password"><u>Recupera Password</u></p></p><br><br><br>
+                    <input type="hidden" name="Servlet" value="login">
                     <input type="submit" value="ACCEDI">
                     <br><br><br>
                 </form>
