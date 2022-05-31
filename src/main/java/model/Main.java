@@ -61,4 +61,12 @@ public class Main
 		controllo.close();
 		return false;
 	}
+	public void data (String data, String mese)
+	{
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("update Bustepaga set data = '" + data + "' where  mese = '"+ mese + "'");
+		q.executeUpdate();
+		controllo.close();
+	}
 }

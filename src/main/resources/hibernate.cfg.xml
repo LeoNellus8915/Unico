@@ -13,5 +13,6 @@
       <property name = "hibernate.connection.username">root</property>
       <property name = "hibernate.connection.password">miao</property>
       <mapping resource = "model/Utente.hbm.xml"/>
+      <mapping resource = "model/Bustepaga.hbm.xml"/>
    </session-factory>
 </hibernate-configuration>

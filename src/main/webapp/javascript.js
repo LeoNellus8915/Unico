@@ -139,4 +139,40 @@ function controlla()
 	{
 		alert('Le password non coincidono!');
 	}
- }
+}
+function bustepaga()
+{     			
+	var p1 = document.getElementById('gennaio');
+	var p2 = document.getElementById('febbraio');
+	var p3 = document.getElementById('marzo');
+	var p4 = document.getElementById('aprile');
+	var p5 = document.getElementById('maggio');
+	var p6 = document.getElementById('giugno');
+	var p7 = document.getElementById('luglio');
+	var p8 = document.getElementById('agosto');
+	var p9 = document.getElementById('settembre');
+	var p10 = document.getElementById('ottobre');
+	var p11 = document.getElementById('novembre');
+	var p12 = document.getElementById('dicembre');
+    p1.innerHTML = 'Gennaio';
+    p2.innerHTML = 'Febbraio';
+    p3.innerHTML = 'Marzo';
+    p4.innerHTML = 'Aprile';
+    p5.innerHTML = 'Maggio';
+    p6.innerHTML = 'Giugno';
+    p7.innerHTML = 'Luglio';
+    p8.innerHTML = 'Agosto';
+    p9.innerHTML = 'Settembre';
+    p10.innerHTML = 'Ottobre';
+    p11.innerHTML = 'Novembre';
+    p12.innerHTML = 'Dicembre';
+    p1.style.color = "red";
+}
+function invio(mese)
+{
+	var xhttp = new XMLHttpRequest();
+    
+	xhttp.open("POST", 'Servlet_Bustepaga', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("Servlet="+mese);
+}

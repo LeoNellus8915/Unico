@@ -46,12 +46,13 @@
     <head>
         <title>Unico</title>
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="javascript.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body onload="bustepaga()">
         <div class="header">
             <p class="home">LOGO</p>
             <form method="post" action="Servlet">
@@ -62,54 +63,54 @@
         <p class="utente"> <a href="home.jsp">Home</a> > Buste paga</p><br>
         <br><br>
         <div class="contenitore">
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%;">
+            <a href="PDF/Gennaio.pdf" download="Gennaio"><div onclick="invio('Gennaio')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%;">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Gennaio</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <p id="gennaio" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Febbraio.pdf" download="Febbraio"><div onclick="invio('Febbraio')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Febbraio</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <p id="febbraio" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Marzo.pdf" download="Marzo"><div onclick="invio('Marzo')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Marzo</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <p id="marzo" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Aprile.pdf" download="Aprile"><div onclick="invio('Aprile')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Aprile</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
+                <p id="aprile" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Maggio.pdf" download="Maggio"><div onclick="invio('Maggio')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Maggio</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <p id="maggio" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Giugno.pdf" download="Giugno"><div onclick="invio('Giugno')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Giugno</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <p id="giugno" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Luglio.pdf" download="Luglio"><div onclick="invio('Luglio')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Luglio</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <p id="luglio" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Agosto.pdf" download="Agosto"><div onclick="invio('Agosto')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Agosto</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
+                <p id="agosto" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Settembre.pdf" download="Settembre"><div onclick="invio('Settembre')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Settembre</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <p id="settembre" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Ottobre.pdf" download="Ottobre"><div onclick="invio('Ottobre')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Ottobre</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <p id="ottobre" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Novembre.pdf" download="Novembre"><div onclick="invio('Novembre')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Novembre</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+                <p id="novembre" class="categorie"></p>
+            </div></a>
+            <a href="PDF/Dicembre.pdf" download="Dicembre"><div onclick="invio('Dicembre')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p class="categorie">Dicembre</p>
-            </div>
+                <p id="dicembre" class="categorie"></p>
+            </div></a>
         </div>
     </body>
 </html>
