@@ -19,7 +19,7 @@
             </div>
 
             <div class="div1">
-                <form method="POST" action="Login">
+                <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Accedi</p></h2></b>
                     <br><br>
@@ -28,6 +28,7 @@
                     <h5><p class="index">Password</p></h2><br>
                     <p class="index"><input type="password" name="password" placeholder="**********"></p><br><br>
                     <h5><p class="index"><input type=checkbox value="recupera_password"><u>Recupera Password</u></p></p><br><br><br>
+                    <input type="hidden" name="Servlet" value="login">
                     <input type="submit" value="ACCEDI">
                     <br><br><br>
                 </form>
@@ -53,7 +54,10 @@
     <body>
         <div class="header">
             <p class="home">LOGO</p>
-            <form method="post" action="Logout"><button class="esci">ESCI</button></form>
+            <form method="post" action="Servlet">
+            	<input type="hidden" name="Servlet" value="logout">
+            	<button class="esci">ESCI</button>
+            </form>
         </div><br>
         <p class="utente">Home > <%String x = (String)request.getAttribute("Utente");
         							out.println(x);%></p><br>

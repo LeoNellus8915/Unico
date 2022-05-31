@@ -17,7 +17,7 @@
             </div>
 
             <div class="div1">
-                <form method="POST" action="Register">
+                <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Aggiungi Utente</p></h2></b>
                     <br><br>
@@ -27,6 +27,7 @@
                     <p class="index"><input type="password" id="password" name="password" placeholder="**********" min="6" max="20" required=""></p><br><br>
                     <h5><p class="index">Conferma Password</p></h5><br>
                     <p class="index"><input type="password" id="password2" name="password2" placeholder="**********" min="6" max="20" required="" onblur="controlla()"></p><br><br><br><br>
+                    <input type="hidden" name="Servlet" value="register">
                     <input type="submit" value="AGGIUNGI">
                     <br><br><br>
                 </form>

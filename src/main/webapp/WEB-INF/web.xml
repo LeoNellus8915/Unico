@@ -5,33 +5,13 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>Login</servlet-name>
-  	<display-name>Login</display-name>
+  	<servlet-name>Servlet</servlet-name>
+  	<display-name>Servlet</display-name>
   	<description></description>
-  	<servlet-class>controller.Login</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>Logout</servlet-name>
-  	<display-name>Logout</display-name>
-  	<description></description>
-  	<servlet-class>controller.Logout</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>Register</servlet-name>
-  	<display-name>Register</display-name>
-  	<description></description>
-  	<servlet-class>controller.Register</servlet-class>
+  	<servlet-class>controller.Servlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Login</servlet-name>
-  	<url-pattern>/Login</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Logout</servlet-name>
-  	<url-pattern>/Logout</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Register</servlet-name>
-  	<url-pattern>/Register</url-pattern>
+  	<servlet-name>Servlet</servlet-name>
+  	<url-pattern>/Servlet</url-pattern>
   </servlet-mapping>
 </web-app>
