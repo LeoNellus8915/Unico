@@ -67,7 +67,7 @@ public class Main
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		Query q = controllo.createQuery("update Bustepaga set data = '" + data + "' where mese = '"+ mese + "' and data = 'null'");
+		Query q = controllo.createQuery("update Bustepaga set data = '" + data + "' where mese = '"+ mese + "' and data is null");
 		q.executeUpdate();
 		controllo.close();
 	}
@@ -75,6 +75,7 @@ public class Main
 	{
 		Bustepaga busta;
 		ArrayList<String> data = new ArrayList<String>();
+		data.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q = controllo.createQuery("from Bustepaga");
@@ -85,6 +86,7 @@ public class Main
         	data.add(busta.getData());
         }
 		controllo.close();
+		data.add(" ");
 		return data;
 	}
 }

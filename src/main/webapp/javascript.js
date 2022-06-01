@@ -151,46 +151,71 @@ function bustepaga()
     {
     	if (this.readyState == 4 && this.status == 200)
         {
-			var array;
-			array = this.responseText;
-			
-			var p1 = document.getElementById('gennaio');
-			var p2 = document.getElementById('febbraio');
-			var p3 = document.getElementById('marzo');
-			var p4 = document.getElementById('aprile');
-			var p5 = document.getElementById('maggio');
-			var p6 = document.getElementById('giugno');
-			var p7 = document.getElementById('luglio');
-			var p8 = document.getElementById('agosto');
-			var p9 = document.getElementById('settembre');
-			var p10 = document.getElementById('ottobre');
-			var p11 = document.getElementById('novembre');
-			var p12 = document.getElementById('dicembre');
+   			var risposta = xhttp.responseText;
+   			date = risposta.split(", ");
 
-     		if (data[0] == null)
-				p1.innerHTML = 'Gennaio';
-			else
-				p1.style.color = "red";
-				
-    		p2.innerHTML = 'Febbraio';
-    		p3.innerHTML = 'Marzo';
-    		p4.innerHTML = 'Aprile';
-    		p5.innerHTML = 'Maggio';
-    		p6.innerHTML = 'Giugno';
-    		p7.innerHTML = 'Luglio';
-    		p8.innerHTML = 'Agosto';
-    		p9.innerHTML = 'Settembre';
-    		p10.innerHTML = 'Ottobre';
-    		p11.innerHTML = 'Novembre';
-    		p12.innerHTML = 'Dicembre';
+     		if (date[1] != "null")
+				document.getElementById('Gennaio').style.color = "red";
+			if (date[2] != "null")
+    			document.getElementById('Febbraio').style.color = "red";
+    		if (date[3] != "null")
+    			document.getElementById('Marzo').style.color = "red";
+    		if (date[4] != "null")
+    			document.getElementById('Aprile').style.color = "red";
+    		if (date[5] != "null")
+    			document.getElementById('Maggio').style.color = "red";
+    		if (date[6] != "null")
+    			document.getElementById('Giugno').style.color = "red";
+    		if (date[7] != "null")
+    			document.getElementById('Luglio').style.color = "red";
+    		if (date[8] != "null")
+    			document.getElementById('Agosto').style.color = "red";
+    		if (date[9] != "null")
+    			document.getElementById('Settembre').style.color = "red";
+    		if (date[10] != "null")
+    			document.getElementById('Ottobre').style.color = "red";
+    		if (date[11] != "null")
+    			document.getElementById('Novembre').style.color = "red";
+    		if (date[12] != "null")
+    			document.getElementById('Dicembre').style.color = "red";
+    			
+    		if (date[1] != "null")
+				document.getElementById("1").innerHTML = date[1];
+			if (date[2] != "null")
+				document.getElementById("2").innerHTML = date[2];
+			if (date[3] != "null")
+				document.getElementById("3").innerHTML = date[3];
+			if (date[4] != "null")
+				document.getElementById("4").innerHTML = date[4];
+			if (date[5] != "null")
+				document.getElementById("5").innerHTML = date[5];
+			if (date[6] != "null")
+				document.getElementById("6").innerHTML = date[6];
+			if (date[7] != "null")
+				document.getElementById("7").innerHTML = date[7];
+			if (date[8] != "null")
+				document.getElementById("8").innerHTML = date[8];
+			if (date[9] != "null")
+				document.getElementById("9").innerHTML = date[9];
+			if (date[10] != "null")
+				document.getElementById("10").innerHTML = date[10];
+			if (date[11] != "null")
+				document.getElementById("11").innerHTML = date[11];
+			if (date[12] != "null")
+				document.getElementById("12").innerHTML = date[12];
     	}
     }
 }
-function invio(mese)
+function invio(mese, num)
 {
 	var xhttp = new XMLHttpRequest();
-    
+	
+	document.getElementById(mese).style.color = "red";
+	alert("Stai scaricando il pdf del mese di " + mese + ". Verra segnato l'orario del download.");
+	
 	xhttp.open("POST", 'Servlet_Bustepaga', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("Servlet="+mese);
+    
+    bustepaga();
 }

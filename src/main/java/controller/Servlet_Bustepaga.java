@@ -4,11 +4,13 @@ import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.Main;
 
 public class Servlet_Bustepaga extends HttpServlet
@@ -21,7 +23,8 @@ public class Servlet_Bustepaga extends HttpServlet
 		String servlet = request.getParameter("Servlet");
 		if (servlet.equals("mesi"))
 		{
-			response.getWriter().println(main.getData());
+			ArrayList date = main.getData();
+			response.getWriter().println(date);
 		}
 		else
 		{
