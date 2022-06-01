@@ -203,10 +203,11 @@ function bustepaga()
 				document.getElementById("11").innerHTML = date[11];
 			if (date[12] != "null")
 				document.getElementById("12").innerHTML = date[12];
+			console.log("bella");
     	}
     }
 }
-function invio(mese, pdf)
+async function invio(mese, pdf)
 {
 	var xhttp = new XMLHttpRequest();
 	
@@ -224,10 +225,15 @@ function invio(mese, pdf)
 			xhttp.open("POST", 'Servlet_Bustepaga', true);
     		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     		xhttp.send("Servlet="+mese);
-    	
+    		
+    		await sleep(800);
     		bustepaga();
     	}
 	}
 	else
     	document.getElementById("gennaio_pdf").click();
-}	
+}
+function sleep(ms)
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
