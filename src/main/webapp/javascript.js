@@ -206,7 +206,7 @@ function bustepaga()
     	}
     }
 }
-function invio(mese, num)
+function invio(mese, pdf)
 {
 	var xhttp = new XMLHttpRequest();
 	
@@ -215,14 +215,19 @@ function invio(mese, num)
 	var colore = window.getComputedStyle(mese_corrente).color;
 	
 	if (colore != "rgb(255, 0, 0)")
-		conferma = confirm("Stai scaricando il pdf del mese di " + mese + ". Verra segnato l'orario del download.");
-		
-	if (conferma == true)
 	{
-		xhttp.open("POST", 'Servlet_Bustepaga', true);
-    	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    	xhttp.send("Servlet="+mese);
-    
-    	bustepaga();
-    }
-}
+		conferma = confirm("Stai scaricando il pdf del mese di " + mese + ". Verra segnato l'orario del download.");
+		if (conferma == true)
+		{
+			document.getElementById(pdf).click();
+			
+			xhttp.open("POST", 'Servlet_Bustepaga', true);
+    		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    		xhttp.send("Servlet="+mese);
+    	
+    		bustepaga();
+    	}
+	}
+	else
+    	document.getElementById("gennaio_pdf").click();
+}	
