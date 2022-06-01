@@ -231,7 +231,7 @@ async function invio(mese, pdf)
     	}
 	}
 	else
-    	document.getElementById("gennaio_pdf").click();
+    	document.getElementById(pdf).click();
 }
 function sleep(ms)
 {
