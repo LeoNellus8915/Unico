@@ -210,12 +210,19 @@ function invio(mese, num)
 {
 	var xhttp = new XMLHttpRequest();
 	
-	document.getElementById(mese).style.color = "red";
-	alert("Stai scaricando il pdf del mese di " + mese + ". Verra segnato l'orario del download.");
+	var mese_corrente = document.getElementById(mese);
+	var conferma = null;
+	var colore = window.getComputedStyle(mese_corrente).color;
 	
-	xhttp.open("POST", 'Servlet_Bustepaga', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("Servlet="+mese);
+	if (colore != "rgb(255, 0, 0)")
+		conferma = confirm("Stai scaricando il pdf del mese di " + mese + ". Verra segnato l'orario del download.");
+		
+	if (conferma == true)
+	{
+		xhttp.open("POST", 'Servlet_Bustepaga', true);
+    	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    	xhttp.send("Servlet="+mese);
     
-    bustepaga();
+    	bustepaga();
+    }
 }

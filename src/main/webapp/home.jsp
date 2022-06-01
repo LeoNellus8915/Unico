@@ -67,7 +67,7 @@
                 <img src="Immagini/a.svg"><br><br><br>
                 <p class="categorie">Modulo Presenze</p>
             </div>
-            <a href="Bustepaga.jsp"><div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+            <a href="bustepaga.jsp"><div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
                 <img src="Immagini/b.svg"><br><br><br>
                 <p class="categorie">Buste Paga&nbsp&nbsp&nbsp&nbsp</p>
             </div></a>
