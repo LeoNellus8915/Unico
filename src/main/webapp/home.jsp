@@ -91,10 +91,10 @@
                 <img style="margin-top: 20%;" src="Immagini/g.svg"><br><br><br>
                 <p class="categorie">Visita Medica&nbsp&nbsp</p>
             </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
+            <a href="profilo&cv.jsp"><div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
                 <img style="margin-top: 20%;" src="Immagini/h.svg"><br><br><br>
                 <p class="categorie">Profilo & CV&nbsp&nbsp</p>
-            </div>
+            </div></a>
         </div>
     </body>
 </html>
