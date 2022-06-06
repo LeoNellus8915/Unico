@@ -81,7 +81,7 @@ input[type=email]
     width:137%;
     font-family: 'Roboto', sans-serif;
 }
-input[type=text], input[type=password]
+input[type=text], input[type=password], input[type=number]
 {
     font-size: 140%;
     border-radius: 30px;
