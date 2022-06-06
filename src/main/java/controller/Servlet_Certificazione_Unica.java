@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Main;
 
-public class Servlet_Bustepaga extends HttpServlet
+public class Servlet_Certificazione_Unica extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -21,9 +21,9 @@ public class Servlet_Bustepaga extends HttpServlet
 		RequestDispatcher disp = null;
 		Main main = new Main();
 		String servlet = request.getParameter("Servlet");
-		if (servlet.equals("mesi"))
+		if (servlet.equals("anni"))
 		{
-			ArrayList date = main.getData_Mesi();
+			ArrayList date = main.getData_Anni();
 			response.getWriter().println(date);
 		}
 		else
@@ -31,7 +31,7 @@ public class Servlet_Bustepaga extends HttpServlet
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
 			LocalDateTime now = LocalDateTime.now();  
 			String data = dtf.format(now);  
-			main.bustepaga_data(data, servlet);
+			main.certificazione_unica_data(data, servlet);
 		}
 	}
 }

@@ -203,7 +203,6 @@ function bustepaga()
 				document.getElementById("11").innerHTML = date[11];
 			if (date[12] != "null")
 				document.getElementById("12").innerHTML = date[12];
-			console.log("bella");
     	}
     }
 }
@@ -226,7 +225,7 @@ async function invio(mese, pdf)
     		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     		xhttp.send("Servlet="+mese);
     		
-    		await sleep(800);
+    		await sleep(1000);
     		bustepaga();
     	}
 	}
@@ -236,4 +235,64 @@ async function invio(mese, pdf)
 function sleep(ms)
 {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+function certificazione_unica()
+{    
+	var xhttp = new XMLHttpRequest();
+    
+	xhttp.open("POST", 'Servlet_Certificazione_Unica', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("Servlet="+"anni");
+    xhttp.onreadystatechange = function()
+    {
+    	if (this.readyState == 4 && this.status == 200)
+        {
+   			var risposta = xhttp.responseText;
+   			date = risposta.split(", ");
+
+     		if (date[1] != "null")
+				document.getElementById('2019').style.color = "red";
+			if (date[2] != "null")
+    			document.getElementById('2020').style.color = "red";
+    		if (date[3] != "null")
+    			document.getElementById('2021').style.color = "red";
+    		if (date[4] != "null")
+    			document.getElementById('2022').style.color = "red";
+    			
+    		if (date[1] != "null")
+				document.getElementById("1").innerHTML = date[1];
+			if (date[2] != "null")
+				document.getElementById("2").innerHTML = date[2];
+			if (date[3] != "null")
+				document.getElementById("3").innerHTML = date[3];
+			if (date[4] != "null")
+				document.getElementById("4").innerHTML = date[4];
+    	}
+    }
+}
+async function invio2(anno, pdf)
+{
+	var xhttp = new XMLHttpRequest();
+	
+	var anno_corrente = document.getElementById(anno);
+	var conferma = null;
+	var colore = window.getComputedStyle(anno_corrente).color;
+	
+	if (colore != "rgb(255, 0, 0)")
+	{
+		conferma = confirm("Stai scaricando il pdf dell'anno " + anno + ". Verra segnato l'orario del download.");
+		if (conferma == true)
+		{
+			document.getElementById(pdf).click();
+			
+			xhttp.open("POST", 'Servlet_Certificazione_Unica', true);
+    		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    		xhttp.send("Servlet="+anno);
+    		
+    		await sleep(1000);
+    		certificazione_unica();
+    	}
+	}
+	else
+    	document.getElementById(pdf).click();
 }

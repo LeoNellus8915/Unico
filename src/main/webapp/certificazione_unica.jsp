@@ -46,12 +46,13 @@
     <head>
         <title>Unico</title>
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="javascript.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body onload="certificazione_unica()">
         <div class="header">
             <p class="home">LOGO</p>
             <form method="post" action="Servlet">
@@ -59,43 +60,34 @@
             	<button class="esci">ESCI</button>
             </form>
         </div><br>
-        <p class="utente">Home > <%String x = (String)session.getAttribute("Utente");
-        							out.println(x);%></p><br>
+        <p class="utente"> <a href="home.jsp">Home</a> > Certificazione Unica</p><br>
         <br><br>
         <div class="contenitore">
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%;">
-                <img src="Immagini/a.svg"><br><br><br>
-                <p class="categorie">Modulo Presenze</p>
+            <div onclick="invio2('2019', '2019_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%;">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p id="2019" class="categorie">2019</p>
+                <p id="1" class="categorie"></p>
             </div>
-            <a href="bustepaga.jsp"><div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img src="Immagini/b.svg"><br><br><br>
-                <p class="categorie">Buste Paga&nbsp&nbsp&nbsp&nbsp</p>
-            </div></a>
-            <a href="certificazione_unica.jsp"><div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img src="Immagini/c.svg"><br><br><br>
-                <p class="categorie">Certificazione Unica</p>
-            </div></a>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img src="Immagini/d.svg"><br><br><br>
-                <p class="categorie">Commesse</p>
+            <div onclick="invio2('2020', '2020_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p id="2020" class="categorie">2020</p>
+                <p id="2" class="categorie"></p>
             </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
-                <img src="Immagini/e.svg"><br><br><br>
-                <p class="categorie">Certificazioni</p>
+            <div onclick="invio2('2021', '2021_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p id="2021" class="categorie">2021</p>
+                <p id="3" class="categorie"></p>
             </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img src="Immagini/f.svg"><br><br><br>
-                <p class="categorie">Corso Sicurezza</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img style="margin-top: 20%;" src="Immagini/g.svg"><br><br><br>
-                <p class="categorie">Visita Medica&nbsp&nbsp</p>
-            </div>
-            <div class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img style="margin-top: 20%;" src="Immagini/h.svg"><br><br><br>
-                <p class="categorie">Profilo & CV&nbsp&nbsp</p>
+            <div onclick="invio2('2022', '2022_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
+                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                <p id="2022" class="categorie">2022</p>
+                <p id="4" class="categorie"></p>
             </div>
         </div>
+        <a href="PDF/2019.pdf" id="2019_pdf" download="2019" hidden></a>
+        <a href="PDF/2020.pdf" id="2020_pdf" download="2020" hidden></a>
+        <a href="PDF/2021.pdf" id="2021_pdf" download="2021" hidden></a>
+        <a href="PDF/2022.pdf" id="2022_pdf" download="2022" hidden></a>
     </body>
 </html>
 <%}%>

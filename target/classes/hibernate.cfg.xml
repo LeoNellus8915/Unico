@@ -14,5 +14,6 @@
       <property name = "hibernate.connection.password">miao</property>
       <mapping resource = "model/Utente.hbm.xml"/>
       <mapping resource = "model/Bustepaga.hbm.xml"/>
+      <mapping resource = "model/Certificazione_Unica.hbm.xml"/>
    </session-factory>
 </hibernate-configuration>

@@ -72,7 +72,7 @@
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
                 <p id="Febbraio" class="categorie">Febbraio</p>
                 <p id="2" class="categorie"></p>
-            </div><
+            </div>
             <div onclick="invio('Marzo', 'marzo_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
                 <img class="buste" src="Immagini/pdf.svg"><br><br><br>
                 <p id="Marzo" class="categorie">Marzo</p>

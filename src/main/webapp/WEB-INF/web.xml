@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>controller.Servlet_Bustepaga</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Servlet_Certificazione_Unica</servlet-name>
+  	<display-name>Servlet_Certificazione_Unica</display-name>
+  	<description></description>
+  	<servlet-class>controller.Servlet_Certificazione_Unica</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Servlet</servlet-name>
   	<url-pattern>/Servlet</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>Servlet_Bustepaga</servlet-name>
   	<url-pattern>/Servlet_Bustepaga</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Servlet_Certificazione_Unica</servlet-name>
+  	<url-pattern>/Servlet_Certificazione_Unica</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -63,7 +63,7 @@ public class Main
 		controllo.close();
 		return false;
 	}
-	public void data (String data, String mese)
+	public void bustepaga_data (String data, String mese)
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
@@ -71,7 +71,7 @@ public class Main
 		q.executeUpdate();
 		controllo.close();
 	}
-	public ArrayList getData()
+	public ArrayList getData_Mesi()
 	{
 		Bustepaga busta;
 		ArrayList<String> data = new ArrayList<String>();
@@ -84,6 +84,32 @@ public class Main
         {
         	busta = (Bustepaga) buste.get(c);
         	data.add(busta.getData());
+        }
+		controllo.close();
+		data.add(" ");
+		return data;
+	}
+	public void certificazione_unica_data (String data, String anno)
+	{
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("update Certificazione_Unica set data = '" + data + "' where anno = '"+ anno + "' and data is null");
+		q.executeUpdate();
+		controllo.close();
+	}
+	public ArrayList getData_Anni()
+	{
+		Certificazione_Unica certificazione;
+		ArrayList<String> data = new ArrayList<String>();
+		data.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("from Certificazione_Unica");
+		List cert = q.list();
+		for (int c=0; c<cert.size(); c++)
+        {
+        	certificazione = (Certificazione_Unica) cert.get(c);
+        	data.add(certificazione.getData());
         }
 		controllo.close();
 		data.add(" ");
