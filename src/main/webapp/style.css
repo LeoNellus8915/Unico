@@ -28,6 +28,16 @@ button.esci
     width: 5%;
     height: 40%;
 }
+botton.add
+{
+	margin-left: 80%; 
+	font-size: 30;
+}
+button.remove
+{
+	margin-right: 80%; 
+	font-size: 30;
+}
 /*-------------------------------------*/
 div.div1
 {
@@ -59,6 +69,11 @@ div.categorie
     box-shadow: 3px 3px 1px rgb(208, 206, 206);
     text-align: center;
 }
+div.piumeno
+{
+	width: 50%;
+	float: left;
+}
 /*-------------------------------------*/
 input[type=submit]
 {
@@ -81,7 +96,7 @@ input[type=email]
     width:137%;
     font-family: 'Roboto', sans-serif;
 }
-input[type=text], input[type=password], input[type=number]
+input[type=text], input[type=password], input[type=number], input[type=date]
 {
     font-size: 140%;
     border-radius: 30px;

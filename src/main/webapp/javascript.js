@@ -296,3 +296,20 @@ async function invio2(anno, pdf)
 	else
     	document.getElementById(pdf).click();
 }
+function add(input, span, botton, controllo)
+{
+	var dato = document.forms["form"][controllo].value;
+    if ((document.getElementById(input).style.display == "none") && (dato != ""))
+    {
+        var br = document.createElement('br');
+        var br2 = document.createElement('br');
+        document.getElementById(input).removeAttribute('style');
+        document.getElementById(span).appendChild(br);
+        if (input == "tech5")
+			document.getElementById(span).appendChild(br2);
+		if (input == "lingua3")
+			document.getElementById(span).appendChild(br2);
+		else
+        	document.getElementById(botton).removeAttribute('style');
+    }
+} 
