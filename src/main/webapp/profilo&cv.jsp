@@ -55,13 +55,13 @@
     <body>
         <center>
             <div class="header">
-            <p class="home">LOGO</p>
-            <form method="post" action="Servlet">
-            	<input type="hidden" name="Servlet" value="logout">
-            	<button class="esci">ESCI</button>
-            </form>
-        </div><br>
-
+            	<p class="home">LOGO</p>
+            	<form method="post" action="Servlet">
+            		<input type="hidden" name="Servlet" value="logout">
+            		<button class="esci">ESCI</button>
+            	</form>
+        	</div><br>
+			<p class="utente"> <a href="home.jsp">Home</a> > Profilo & CV</p><br><br><br>
             <div class="div1">
                 <form name="form" method="POST" action="Servlet">
                     <br>
@@ -69,18 +69,25 @@
                     <br><br>
                     <h5><p class="index">Nome</p></h5><br>
                     <p class="index"><input type="text" name="nome"></p><br><br>
+                    
                     <h5><p class="index">Cognome</p></h5><br>
                     <p class="index"><input type="text" name="cognome"></p><br><br>
+                    
                     <h5><p class="index">Recapito</p></h5><br>
                     <p class="index"><input type="number" name="recapto"></p><br><br>
+                    
                     <h5><p class="index">Città di allocazione</p></h5><br>
-                    <p class="index"><input type="text" name="allocazione"></p><br><br>
-                    <h5><p class="index">Skill</p></h5><br>
-                    <p class="index"><input type="text" name="skill"></p><br><br>
+                    <p class="index"><input type="text" name="citta_allocazione"></p><br><br>
+                    
+                    <h5><p class="index">Ruolo</p></h5><br>
+                    <p class="index"><input type="text" name="ruolo"></p><br><br>
+                    
                     <h5><p class="index">Competenza</p></h5><br>
-                    <p class="index"><input type="text" name="competenza"></p><br><br>
+                    <p class="index"><input type="text" name="competenza_principale"></p><br><br>
+                    
                     <h5><p class="index">Data Colloquio</p></h5><br>
                     <p class="index"><input type="date" name="data_colloquio"></p><br><br>
+                    
                     <h5><p class="index">Anno Colloquio</p></h5><br>
                     <p class="index"><input type="number" name="anno_colloquio"></p><br><br>
                     
@@ -91,16 +98,16 @@
                     <p class="index"><input type="text" name="impressioni"></p><br><br>
                     
                     <h5><p class="index">Fonte reperimento</p></h5><br>
-                    <p class="index"><input type="text" name="reperimento"></p><br><br>
+                    <p class="index"><input type="text" name="fonte_reperimento"></p><br><br>
                     
                     <h5><p class="index">Costo Giornaliero</p></h5><br>
                     <p class="index"><input type="number" name="costo_giornaliero" step=0.01></p><br><br>
                     
                     <h5><p class="index">Possibilità Lavorativa</p></h5><br>
-                    <p class="index"><input type="text" name="possibilita"></p><br><br>
+                    <p class="index"><input type="text" name="possibilita_lavorativa"></p><br><br>
                     
                     <h5><p class="index">Skill</p></h5><br>
-                    <p class="index"><input type="text" name="skill2"></p><br><br>
+                    <p class="index"><input type="text" name="skill"></p><br><br>
                     
                     <h5><p class="index">Tech</p></h5><br>
         			<p class="index"><input type="text" name="tech1"></p><botton class="add" onclick="add('tech2', 'tech22', 'tech222', 'tech1')">+</botton><br>

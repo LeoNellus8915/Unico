@@ -115,4 +115,48 @@ public class Main
 		data.add(" ");
 		return data;
 	}
+	public void salva (String nome, String cognome, String recapito, String citta_allocazione, String ruolo, String competenza_primaria, String data_colloquio,
+						String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, double costo_giornaliero,
+						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech5, String lingua1,
+						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
+	{
+		Profilo profilo = new Profilo();
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select max(id) from Profilo");
+		List list = q.list();
+        if ((Integer)list.get(0) != null)
+        	profilo.setId((Integer)list.get(0) + 1);
+        else
+        	profilo.setId(0);
+        profilo.setNome(nome);
+        profilo.setCognome(cognome);
+        profilo.setRecapito(recapito);
+        profilo.setCitta_allocazione(citta_allocazione);
+        profilo.setRuolo(ruolo);
+        profilo.setCompetenza_principale(competenza_primaria);
+        profilo.setData_colloquio(data_colloquio);
+        profilo.setAnno_colloquio(anno_colloquio);
+        profilo.setEsito_colloquio(esito_colloquio);
+        profilo.setImpressioni(impressioni);
+        profilo.setFonte_reperimento(fonte_reperimento);
+        profilo.setCosto_giornaliero(costo_giornaliero);
+        profilo.setPossibilita_lavorativa(possibilita_lavorativa);
+        profilo.setSkill(skill);
+        profilo.setTech1(tech1);
+        profilo.setTech2(tech2);
+        profilo.setTech3(tech3);
+        profilo.setTech4(tech4);
+        profilo.setTech5(tech5);
+        profilo.setLingua1(lingua1);
+        profilo.setLingua2(lingua2);
+        profilo.setLingua3(lingua3);
+        profilo.setCompetenze_totali(competenze_totali);
+        profilo.setCertificazioni(certificazioni);
+        profilo.setSeniority(seniority);
+        
+        controllo.save(profilo);
+        controllo.getTransaction().commit();
+        controllo.close();
+	}
 }

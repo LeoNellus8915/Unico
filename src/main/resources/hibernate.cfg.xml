@@ -15,5 +15,6 @@
       <mapping resource = "model/Utente.hbm.xml"/>
       <mapping resource = "model/Bustepaga.hbm.xml"/>
       <mapping resource = "model/Certificazione_Unica.hbm.xml"/>
+      <mapping resource = "model/Profilo.hbm.xml"/>
    </session-factory>
 </hibernate-configuration>
