@@ -109,36 +109,72 @@
                     <h5><p class="index">Skill</p></h5><br>
                     <p class="index"><input type="text" name="skill"></p><br><br>
                     
+                    
                     <h5><p class="index">Tech</p></h5><br>
-        			<p class="index"><input type="text" name="tech1"></p><botton class="add" onclick="add('tech2', 'tech22', 'tech222', 'tech1')">+</botton><br>
-        			
+        			<p class="index">
+                        <input type="text" name="input_tech1">
+                    </p>
+                    <botton class="add" onclick="add('input_tech2', 'add_tech2', 'remove_tech1', 'span_tech2', 'input_tech1')">+</botton><br>
+
         			<h5><p class="index"></p></h5>
-        			<p class="index"><input type="text" id="tech2" name="tech2" style="display: none;"></p><botton id="tech222" class="add" onclick="add('tech3', 'tech33', 'tech333', 'tech2')" style="display: none"> + </botton>
-        			<span id="tech22"></span>
-        			
+        			<p class="index">
+                        <input type="text" id="input_tech2" name="input_tech2" style="display: none;">
+                    </p>
+                    <botton id="add_tech2" class="add" onclick="add('input_tech3', 'add_tech3', 'remove_tech2', 'span_tech3', 'input_tech2')" style="display: none"> + </botton>
+        			<botton id="remove_tech1" class="remove" onclick="remove('input_tech2', 'add_tech2', 'remove_tech1', 'span_tech2')" style="display: none">-</botton>
+                    <span id="span_tech2"></span>
+
                     <h5><p class="index"></p></h5>
-        			<p class="index"><input type="text" id="tech3" name="tech3" style="display: none;"></p><botton id="tech333" class="add" onclick="add('tech4', 'tech44', 'tech444', 'tech3')" style="display: none;"> + </botton>
-        			<span id="tech33"></span>
+        			<p class="index">
+                        <input type="text" id="input_tech3" name="input_tech3" style="display: none;">
+                    </p>
+                    <botton id="add_tech3" class="add" onclick="add('input_tech4', 'add_tech4', 'remove_tech3', 'span_tech4', 'input_tech3')" style="display: none;"> + </botton>
+        			<botton id="remove_tech2" class="remove" onclick="remove('input_tech3', 'add_tech3', 'remove_tech2', 'span_tech3')" style="display: none">-</botton>
+                    <span id="span_tech3"></span>
         			
         			<h5><p class="index"></p></h5>
-        			<p class="index"><input type="text" id="tech4" name="tech4" style="display: none;"></p><botton id="tech444" class="add" onclick="add('tech5', 'tech55', '', 'tech4')" style="display: none;">+</botton>
-        			<span id="tech44"></span>
+        			<p class="index">
+                        <input type="text" id="input_tech4" name="input_tech4" style="display: none;">
+                    </p>
+                    <botton id="add_tech4" class="add" onclick="add('input_tech5', 'add_tech4', 'remove_tech4', 'span_tech5', 'input_tech4')" style="display: none;">+</botton>
+        			<botton id="remove_tech3" class="remove" onclick="remove('input_tech4', 'add_tech4', 'remove_tech3', 'span_tech4')" style="display: none">-</botton>
+                    <span id="span_tech4"></span>
         			
         			<h5><p class="index"></p></h5>
-        			<p class="index"><input type="text" id="tech5" name="tech5" style="display: none;"></p>
-        			<span id="tech55"></span>
+        			<p class="index">
+                        <input type="text" id="input_tech5" name="input_tech5" style="display: none;">
+                    </p>
+                    <botton id="remove_tech4" class="remove" onclick="remove('input_tech5', 'nulla', 'remove_tech4', 'span_tech5')" style="display: none; margin-left: 80%;">-</botton>
+        			<span id="span_tech5"></span>
+
+
+
                     
                     <h5><p class="index">Lingua</p></h5><br>
-        			<p class="index"><input type="text" name="lingua1"></p><botton class="add" onclick="add('lingua2', 'lingua22', 'lingua222', 'lingua1')">+</botton><br>
+        			<p class="index">
+                        <input type="text" name="input_lingua1">
+                    </p>
+                    <botton class="add" onclick="add('input_lingua2', 'add_lingua2', 'remove_lingua1', 'span_lingua2', 'input_lingua1')">+</botton><br>
         			
         			<h5><p class="index"></p></h5>
-        			<p class="index"><input type="text" id="lingua2" name="lingua2" style="display: none;"></p><botton id="lingua222" class="add" onclick="add('lingua3', 'lingua33', '', 'lingua2')" style="display: none">+</botton>
-        			<span id="lingua22"></span>
+        			<p class="index">
+                        <input type="text" id="input_lingua2" name="input_lingua2" style="display: none;">
+                    </p>
+                    <botton id="add_lingua2" class="add" onclick="add('input_lingua3', 'add_lingua2', 'remove_lingua2', 'span_lingua3', 'input_lingua2')" style="display: none">+</botton>
+        			<botton id="remove_lingua1" class="remove" onclick="remove('input_lingua2', 'add_lingua2', 'remove_lingua1', 'span_lingua2')" style="display: none">-</botton>
+                    <span id="span_lingua2"></span>
         			
                     <h5><p class="index"></p></h5>
-        			<p class="index"><input type="text" id="lingua3" name="lingua3" style="display: none;"></p>
-        			<span id="lingua33"></span>
+        			<p class="index">
+                        <input type="text" id="input_lingua3" name="input_lingua3" style="display: none;">
+                    </p>
+                    <botton id="remove_lingua2" class="remove" onclick="remove('input_lingua3', 'nulla', 'remove_lingua2', 'span_lingua3')" style="display: none; margin-left: 80%;">-</botton>
+        			<span id="span_lingua3"></span>
                     
+
+
+
+
                     <h5><p class="index">Competenze Totali</p></h5><br>
                     <p class="index"><input type="text" name="competenze_totali"></p><br><br>
                     

@@ -296,7 +296,7 @@ async function invio2(anno, pdf)
 	else
     	document.getElementById(pdf).click();
 }
-function add(input, span, botton, controllo)
+function add(input, add, remove, span, controllo)
 {
 	var dato = document.forms["form"][controllo].value;
     if ((document.getElementById(input).style.display == "none") && (dato != ""))
@@ -304,12 +304,27 @@ function add(input, span, botton, controllo)
         var br = document.createElement('br');
         var br2 = document.createElement('br');
         document.getElementById(input).removeAttribute('style');
+
         document.getElementById(span).appendChild(br);
-        if (input == "tech5")
+        if (input == "input_tech5")
 			document.getElementById(span).appendChild(br2);
-		if (input == "lingua3")
+		if (input == "input_lingua3")
 			document.getElementById(span).appendChild(br2);
-		else
-        	document.getElementById(botton).removeAttribute('style');
-    }
+        if(input != "input_tech5")
+            document.getElementById(add).removeAttribute('style');
+        if(input != "input_lingua3")
+            document.getElementById(add).removeAttribute('style');
+        document.getElementById(remove).style.display = 'initial';
+        }
+} 
+
+function remove(input, add, remove, span)
+{
+        document.getElementById(input).style.display = 'none';
+        document.getElementById(input).value = '';
+        if(add != 'nulla')
+        document.getElementById(add).style.display = 'none';
+        document.getElementById(remove).style.display = 'none';
+        document.getElementById(span).style.display = 'none';
+       
 } 

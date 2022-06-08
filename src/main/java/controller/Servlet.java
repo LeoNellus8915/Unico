@@ -97,18 +97,18 @@ public class Servlet extends HttpServlet
 			if (request.getParameter("tech5") == null)
 				tech5 = null;
 			else
-				request.getParameter("tech5");
+				tech5 = request.getParameter("tech5");
 			String lingua1 = request.getParameter("lingua1");
 			String lingua2;
 			if (request.getParameter("lingua2") == null)
 				lingua2 = null;
 			else
-				request.getParameter("lingua2");
+				lingua2 = request.getParameter("lingua2");
 			String lingua3;
 			if (request.getParameter("lingua3") == null)
 				lingua3 = null;
 			else
-				request.getParameter("lingua3");
+				lingua3 = request.getParameter("lingua3");
 			String competenze_totali = request.getParameter("competenze_totali");
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
