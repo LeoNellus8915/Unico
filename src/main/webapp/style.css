@@ -129,6 +129,10 @@ p.utente
     position: absolute;
     left: -8%;
 }
+p.buste
+{
+    margin-bottom: 20%;
+}
 p.categorie
 {
     color: rgb(12, 12, 135);

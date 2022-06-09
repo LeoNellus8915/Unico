@@ -44,86 +44,96 @@
 	%>
 <html>
     <head>
-        <title>Unico</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="javascript.js"></script>
+        <title>home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
 
-    <body onload="bustepaga()">
-        <div class="header">
-            <p class="home">LOGO</p>
-            <form method="post" action="Servlet">
-            	<input type="hidden" name="Servlet" value="logout">
-            	<button class="esci">ESCI</button>
-            </form>
-        </div><br>
-        <p class="utente"> <a href="home.jsp">Home</a> > Buste paga</p><br>
-        <br><br>
-        <div class="contenitore">
-            <div onclick="invio('Gennaio', 'gennaio_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Gennaio" class="categorie">Gennaio</p>
-                <p id="1" class="categorie"></p>
+    <body>
+        <div class="conteiner" style="padding: 10 65 0 65">
+            <div class="row header" style="padding: 10 30 0 0">
+                <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
+                	<input type="hidden" name="Servlet" value="logout">
+                    <div class="col-md-2" style="text-align: right; margin-top: 1%"><button class="esci">Esci</button></div>
             </div>
-            <div onclick="invio('Febbraio', 'febbraio_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Febbraio" class="categorie">Febbraio</p>
-                <p id="2" class="categorie"></p>
+            <br>
+            <div class="row justify-content-center"><div class="col-md-9"><p class="utente"><a href="home.jsp">Home</a> > Buste Paga</p></div></div>
+            <br><br>
+            <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
+                <div onclick="invio('Gennaio', 'Gennaio_pdf')" class="col-lg-2 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Gennaio" class="categorie buste">Gennaio</p>
+                    <p id="1" class="categorie"></p>
+                </div>
+                <div onclick="invio('Febbraio', 'Febbraio_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Febbraio" class="categorie buste">Febbraio</p>
+                    <p id="2" class="categorie"></p>
+                </div>
+                <div onclick="invio('Marzo', 'Marzo_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Marzo" class="categorie buste">Marzo</p>
+                    <p id="3" class="categorie"></p>
+                </div>
+                <div onclick="invio('Aprile', 'Aprile_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Aprile" class="categorie buste">Aprile</p>
+                    <p id="4" class="categorie"></p>
+                </div>
             </div>
-            <div onclick="invio('Marzo', 'marzo_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Marzo" class="categorie">Marzo</p>
-                <p id="3" class="categorie"></p>
+            <br><br>
+            <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
+                <div onclick="invio('Maggio', 'Maggio_pdf')" class="col-lg-2 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Maggio" class="categorie buste">Maggio</p>
+                    <p id="5" class="categorie"></p>
+                </div>
+                <div onclick="invio('Giugno', 'Giugno_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Giugno" class="categorie buste">Giugno</p>
+                    <p id="6" class="categorie"></p>
+                </div>
+                <div onclick="invio('Luglio', 'Luglio_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Luglio" class="categorie buste">Luglio</p>
+                    <p id="7" class="categorie"></p>
+                </div>
+                <div onclick="invio('Agosto', 'Agosto_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Agosto" class="categorie buste">Agosto</p>
+                    <p id="8" class="categorie"></p>
+                </div>
             </div>
-            <div onclick="invio('Aprile', 'aprile_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Aprile" class="categorie">Aprile</p>
-                <p id="4" class="categorie"></p>
-            </div>
-            <div onclick="invio('Maggio', 'maggio_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Maggio" class="categorie">Maggio</p>
-                <p id="5" class="categorie"></p>
-            </div>
-            <div onclick="invio('Giugno', 'giugno_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Giugno" class="categorie">Giugno</p>
-                <p id="6" class="categorie"></p>
-            </div>
-            <div onclick="invio('Luglio', 'luglio_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Luglio" class="categorie">Luglio</p>
-                <p id="7" class="categorie"></p>
-            </div>
-            <div onclick="invio('Agosto', 'agosto_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Agosto" class="categorie">Agosto</p>
-                <p id="8" class="categorie"></p>
-            </div>
-            <div onclick="invio('Settembre', 'settembre_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Settembre" class="categorie">Settembre</p>
-                <p id="9" class="categorie"></p>
-            </div>
-            <div onclick="invio('Ottobre', 'ottobre_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Ottobre" class="categorie">Ottobre</p>
-                <p id="10" class="categorie"></p>
-            </div>
-            <div onclick="invio('Novembre', 'novembre_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Novembre" class="categorie">Novembre</p>
-                <p id="11" class="categorie"></p>
-            </div>
-            <div onclick="invio('Dicembre', 'dicembre_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%; margin-top: 2%">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="Dicembre" class="categorie">Dicembre</p>
-                <p id="12" class="categorie"></p>
+            <br><br>
+            <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
+                <div onclick="invio('Settembre', 'Settembre_pdf')" class="col-lg-2 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Settembre" class="categorie buste">Settembre</p>
+                    <p id="9" class="categorie"></p>
+                </div>
+                <div onclick="invio('Ottobre', 'Ottobre_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Ottobre" class="categorie buste">Ottobre</p>
+                    <p id="10" class="categorie"></p>
+                </div>
+                <div onclick="invio('Novembre', 'Novembre_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Novembre" class="categorie buste">Novembre</p>
+                    <p id="11" class="categorie"></p>
+                </div>
+                <div onclick="invio('Dicembre', 'Dicembre_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="Dicembre" class="categorie buste">Dicembre</p>
+                    <p id="12" class="categorie"></p>
+                </div>
             </div>
         </div>
+        <br><br>
         <a href="PDF/Gennaio.pdf" id="gennaio_pdf" download="Gennaio" hidden></a>
         <a href="PDF/Febbraio.pdf" id="febbraio_pdf" download="Febbraio" hidden></a>
         <a href="PDF/Marzo.pdf" id="marzo_pdf" download="Marzo" hidden></a>

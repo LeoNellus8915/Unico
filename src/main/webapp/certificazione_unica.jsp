@@ -44,46 +44,51 @@
 	%>
 <html>
     <head>
-        <title>Unico</title>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="javascript.js"></script>
+        <title>home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
 
-    <body onload="certificazione_unica()">
-        <div class="header">
-            <p class="home">LOGO</p>
-            <form method="post" action="Servlet">
-            	<input type="hidden" name="Servlet" value="logout">
-            	<button class="esci">ESCI</button>
-            </form>
-        </div><br>
-        <p class="utente"> <a href="home.jsp">Home</a> > Certificazione Unica</p><br>
-        <br><br>
-        <div class="contenitore">
-            <div onclick="invio2('2019', '2019_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:0.5%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="2019" class="categorie">2019</p>
-                <p id="1" class="categorie"></p>
+    <body>
+        <div class="conteiner" style="padding: 10 65 0 65">
+            <div class="row header" style="padding: 10 30 0 0">
+                <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
+                	<input type="hidden" name="Servlet" value="logout">
+                    <div class="col-md-2" style="text-align: right; margin-top: 1%"><button class="esci">Esci</button></div>
             </div>
-            <div onclick="invio2('2020', '2020_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="2020" class="categorie">2020</p>
-                <p id="2" class="categorie"></p>
+            <br>
+            <div class="row justify-content-center"><div class="col-md-9"><p class="utente"><a href="home.jsp">Home</a> > Certificazione Unica</p></div></div>
+            <br><br>
+            <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
+                <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="2019" class="categorie buste">2019</p>
+                    <p id="1" class="categorie"></p>
+                </div>
+                <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="2020" class="categorie buste">2020</p>
+                    <p id="2" class="categorie"></p>
+                </div>
+                <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="2021" class="categorie buste">2021</p>
+                    <p id="3" class="categorie"></p>
+                </div>
+                <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 offset-1 categorie">
+                    <img class="buste" src="Immagini/pdf.svg"><br><br><br>
+                    <p id="2022" class="categorie buste">2022</p>
+                    <p id="4" class="categorie"></p>
+                </div>
             </div>
-            <div onclick="invio2('2021', '2021_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="2021" class="categorie">2021</p>
-                <p id="3" class="categorie"></p>
-            </div>
-            <div onclick="invio2('2022', '2022_pdf')" class="categorie" style="float:left; width:20%; height:45%; margin-left:2%;">
-                <img class="buste" src="Immagini/pdf.svg"><br><br><br>
-                <p id="2022" class="categorie">2022</p>
-                <p id="4" class="categorie"></p>
-            </div>
+            <br><br>
         </div>
+        <br><br>
         <a href="PDF/2019.pdf" id="2019_pdf" download="2019" hidden></a>
         <a href="PDF/2020.pdf" id="2020_pdf" download="2020" hidden></a>
         <a href="PDF/2021.pdf" id="2021_pdf" download="2021" hidden></a>
