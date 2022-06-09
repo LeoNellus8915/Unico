@@ -9,7 +9,7 @@
 		<property name="cognome" type="string" column="cognome"/>
 		<property name="recapito" type="string" column="recapito"/>
 		<property name="ruolo" type="string" column="ruolo"/>
-		<property name="competenza_primaria" type="string" column="competenza_primaria"/>
+		<property name="competenza_principale" type="string" column="competenza_principale"/>
 		<property name="data_colloquio" type="string" column="data_colloquio"/>
 		<property name="anno_colloquio" type="string" column="anno_colloquio"/>
 		<property name="esito_colloquio" type="string" column="esito_colloquio"/>

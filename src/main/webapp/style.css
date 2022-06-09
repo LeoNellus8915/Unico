@@ -5,7 +5,7 @@ body
     font-family: 'Roboto', sans-serif;
 }
 /*-------------------------------------*/
-button
+button.tabella
 {
     background-color: rgb(12, 12, 135);
     font-size: 80%;
@@ -17,16 +17,13 @@ button
 button.esci
 {
     background-color: rgb(12, 12, 135);
-    font-size: 80%;
+    font-size: 70%;
     color: white;
     border:solid 1px rgb(255, 255, 255); 
     border-radius: 30px;
     font-family: 'Roboto', sans-serif;  
-    margin-left: 90%;
-    margin-top: 1.5%;
-    font-size: 60%;
-    width: 5%;
-    height: 40%;
+    width: 35%;
+    height: 55%;
 }
 botton.add
 {
@@ -47,12 +44,8 @@ div.div1
 }
 div.header
 {
-    text-align: left;
-    margin-left: 5%;
     background-color: rgb(12, 12, 135);
     color: white;
-    height: 10%;
-    width: 90%;
 }
 div.contenitore
 {
@@ -66,7 +59,7 @@ div.categorie
     background-color: white;
     border-color: black;
     box-shadow: 3px 3px 1px rgb(208, 206, 206);
-    text-align: center;
+    padding: 20 0 0 0;
 }
 div.piumeno
 {
@@ -128,18 +121,17 @@ p.index
 p.home
 {
     color: white;
-    margin-top: 1.2%;
     font-size: 150%;
-    position: absolute;
-    left: 10%;
 }
 p.utente
 {
-    margin-left: 24%;
+    color: rgb(12, 12, 135);
     position: absolute;
     left: -8%;
 }
-p.categorie{
+p.categorie
+{
+    color: rgb(12, 12, 135);
     margin-top: -5%;
     font-weight: bold;
 }
