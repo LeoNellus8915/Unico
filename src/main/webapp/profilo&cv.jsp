@@ -155,7 +155,7 @@
  
                 <!--SKILL-TECH-->
  				<div class="row bianco">
-	                <div class="col-md-12 margin pad">
+	                <div class="col-md-9 offset-1 pad">
 	                    <h5><p>Skill</p></h5>
 	                    <input class="profilo" type="text" name="skill2">
 	                </div>
