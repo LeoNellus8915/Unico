@@ -315,9 +315,8 @@ function add(input, add, remove, span, controllo)
         if(input != "input_lingua3")
             document.getElementById(add).removeAttribute('style');
         document.getElementById(remove).style.display = 'initial';
-        }
-} 
-
+	}
+}
 function remove(input, add, remove, span)
 {
         document.getElementById(input).style.display = 'none';
@@ -325,6 +324,5 @@ function remove(input, add, remove, span)
         if(add != 'nulla')
         document.getElementById(add).style.display = 'none';
         document.getElementById(remove).style.display = 'none';
-        document.getElementById(span).style.display = 'none';
-       
+        document.getElementById(span).style.display = 'none';  
 } 

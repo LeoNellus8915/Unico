@@ -18,7 +18,7 @@
                 <h1>logo</h1>
             </div>
 
-            <div class="div1">
+            <div class="div1" style="width: 30%;">
                 <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Accedi</p></h2></b>
@@ -48,15 +48,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="javascript.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
-        <div class="conteiner" style="padding: 10 65 0 65">
-            <div class="row header" style="padding: 10 30 0 0">
+    <body onload="certificazione_unica()">
+        <div class="conteiner head">
+            <div class="row header">
                 <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
                 	<input type="hidden" name="Servlet" value="logout">
                     <div class="col-md-2" style="text-align: right; margin-top: 1%"><button class="esci">Esci</button></div>
@@ -68,22 +69,22 @@
                 <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 categorie">
                     <img class="buste" src="Immagini/pdf.svg"><br><br><br>
                     <p id="2019" class="categorie buste">2019</p>
-                    <p id="1" class="categorie"></p>
+                    <p id="1" class="categorie">&nbsp</p><br>
                 </div>
-                <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 offset-1 categorie">
+                <div onclick="invio2('2020', '2020_pdf')" class="col-lg-2 offset-1 categorie">
                     <img class="buste" src="Immagini/pdf.svg"><br><br><br>
                     <p id="2020" class="categorie buste">2020</p>
-                    <p id="2" class="categorie"></p>
+                    <p id="2" class="categorie">&nbsp</p><br>
                 </div>
-                <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 offset-1 categorie">
+                <div onclick="invio2('2021', '2021_pdf')" class="col-lg-2 offset-1 categorie">
                     <img class="buste" src="Immagini/pdf.svg"><br><br><br>
                     <p id="2021" class="categorie buste">2021</p>
-                    <p id="3" class="categorie"></p>
+                    <p id="3" class="categorie">&nbsp</p><br>
                 </div>
-                <div onclick="invio2('2019', '2019_pdf')" class="col-lg-2 offset-1 categorie">
+                <div onclick="invio2('2022', '2022_pdf')" class="col-lg-2 offset-1 categorie">
                     <img class="buste" src="Immagini/pdf.svg"><br><br><br>
                     <p id="2022" class="categorie buste">2022</p>
-                    <p id="4" class="categorie"></p>
+                    <p id="4" class="categorie">&nbsp</p><br>
                 </div>
             </div>
             <br><br>

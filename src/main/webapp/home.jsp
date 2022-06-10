@@ -18,7 +18,7 @@
                 <h1>logo</h1>
             </div>
 
-            <div class="div1">
+            <div class="div1" style="width: 30%;">
                 <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Accedi</p></h2></b>
@@ -55,8 +55,8 @@
     </head>
 
     <body>
-        <div class="conteiner" style="padding: 10 65 0 65">
-            <div class="row header" style="padding: 10 30 0 0">
+        <div class="conteiner head"">
+            <div class="row header">
                 <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
                 	<input type="hidden" name="Servlet" value="logout">
                     <div class="col-md-2" style="text-align: right; margin-top: 1%"><button class="esci">Esci</button></div>
@@ -93,11 +93,11 @@
                     <p class="categorie">Corso Sicurezza</p>
                 </div>
                 <div class="col-md-2 offset-1 categorie">
-                    <img src="Immagini/g.svg" style="margin-top: 20%"><br><br><br>
+                    <img src="Immagini/g.svg" style="margin-top: 7%"><br><br><br>
                     <p class="categorie" style="margin-left: 2%">Visita Medica</p>
                 </div>
                 <div class="col-md-2 offset-1 categorie"><a href="profilo&cv.jsp">
-                    <img src="Immagini/h.svg" style="margin-top: 20%"><br><br><br>
+                    <img src="Immagini/h.svg" style="margin-top: 7%"><br><br><br>
                     <p class="categorie" style="margin-right: 2%">Profilo & CV</p>
                 </a></div>
             </div>

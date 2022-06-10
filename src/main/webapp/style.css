@@ -38,21 +38,13 @@ button.remove
 div.div1
 {
     background-color: #ffffff;
-    margin-left: 35%;
-    margin-right: 35%;
     box-shadow: 5px 5px 2px rgb(179, 175, 175);
 }
 div.header
 {
     background-color: rgb(12, 12, 135);
     color: white;
-}
-div.contenitore
-{
-    background-color: #f1f1f1;
-    margin-left: 15%;
-    height: 60%;
-    width: 80%;
+    padding: 10 30 0 0;
 }
 div.categorie
 {
@@ -61,19 +53,16 @@ div.categorie
     box-shadow: 3px 3px 1px rgb(208, 206, 206);
     padding: 20 0 0 0;
 }
-div.piumeno
+div.head
 {
-	width: 50%;
-	float: left;
+	padding: 10 65 0 65;
 }
 /*-------------------------------------*/
 input[type=submit]
 {
     background-color: rgb(12, 12, 135);
-    font-size: 80%;
     color: white;
-    width: 70%;
-    height: 5%;
+    padding: 5 25 5 25;
     border: none;
     border-radius: 30px;
     font-family: 'Roboto', sans-serif;
@@ -90,7 +79,6 @@ input[type=email]
 }
 input[type=text], input[type=password], input[type=number], input[type=date]
 {
-    font-size: 140%;
     border-radius: 30px;
     padding:10px; 
     font-size:1em; 
@@ -99,13 +87,9 @@ input[type=text], input[type=password], input[type=number], input[type=date]
     font-family: 'Roboto', sans-serif;
 }
 /*-------------------------------------*/
-img
-{
-    margin-top: 15%;
-}
 img.buste
 {
-    height: 30%;
+    height: 40%;
 }
 /*-------------------------------------*/
 p
@@ -123,20 +107,18 @@ p.home
     color: white;
     font-size: 150%;
 }
+p.indexB
+{
+	text-align: center;
+}
 p.utente
 {
-    color: rgb(12, 12, 135);
     position: absolute;
     left: -8%;
 }
-p.buste
-{
-    margin-bottom: 20%;
-}
 p.categorie
 {
-    color: rgb(12, 12, 135);
-    margin-top: -5%;
+    margin-top: -10%;
     font-weight: bold;
 }
 /*-------------------------------------*/
