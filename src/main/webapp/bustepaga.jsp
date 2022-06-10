@@ -59,8 +59,12 @@
         <div class="conteiner head">
             <div class="row header">
                 <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
-                	<input type="hidden" name="Servlet" value="logout">
-                    <div class="col-md-2" style="text-align: right; margin-top: 1%"><button class="esci">Esci</button></div>
+                <div class="col-md-2" style="text-align: right; margin-top: 1%">
+                    <form method="post" action="Servlet">
+                    	<input type="hidden" name="Servlet" value="logout">
+                    	<button class="esci">Esci</button>
+                    </form>
+                </div>
             </div>
             <br>
             <div class="row justify-content-center"><div class="col-md-9"><p class="utente"><a href="home.jsp">Home</a> > Buste Paga</p></div></div>

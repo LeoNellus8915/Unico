@@ -16,7 +16,7 @@
                 <h1>logo</h1>
             </div>
 
-            <div class="div1">
+            <div class="div1" style="width: 30%;">
                 <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Aggiungi Utente</p></h2></b>
