@@ -10,6 +10,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -18,7 +20,7 @@
                 <h1>logo</h1>
             </div>
 
-            <div class="div1" style="width: 30%;">
+            <div class="bianco" style="width: 30%;">
                 <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Accedi</p></h2></b>
@@ -50,147 +52,191 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-
+ 
     <body>
-        <center>
-            <div class="header">
-            	<p class="home">LOGO</p>
-            	<form method="post" action="Servlet">
-            		<input type="hidden" name="Servlet" value="logout">
-            		<button class="esci">ESCI</button>
-            	</form>
-        	</div><br>
-			<p class="utente"> <a href="home.jsp">Home</a> > Profilo & CV</p><br><br><br>
-            <div class="div1">
-                <form name="form" method="POST" action="Servlet">
-                    <br>
-                    <b><h2><p class="index">Salva</p></h2></b>
-                    <br><br>
-                    <h5><p class="index">Nome</p></h5><br>
-                    <p class="index"><input type="text" name="nome"></p><br><br>
-                    
-                    <h5><p class="index">Cognome</p></h5><br>
-                    <p class="index"><input type="text" name="cognome"></p><br><br>
-                    
-                    <h5><p class="index">Recapito</p></h5><br>
-                    <p class="index"><input type="number" name="recapto"></p><br><br>
-                    
-                    <h5><p class="index">Città di allocazione</p></h5><br>
-                    <p class="index"><input type="text" name="citta_allocazione"></p><br><br>
-                    
-                    <h5><p class="index">Ruolo</p></h5><br>
-                    <p class="index"><input type="text" name="ruolo"></p><br><br>
-                    
-                    <h5><p class="index">Competenza</p></h5><br>
-                    <p class="index"><input type="text" name="competenza_principale"></p><br><br>
-                    
-                    <h5><p class="index">Data Colloquio</p></h5><br>
-                    <p class="index"><input type="date" name="data_colloquio"></p><br><br>
-                    
-                    <h5><p class="index">Anno Colloquio</p></h5><br>
-                    <p class="index"><input type="number" name="anno_colloquio"></p><br><br>
-                    
-                    <h5><p class="index">Esito Colloquio</p></h5><br>
-                    <p class="index"><input type="text" name="esito_colloquio"></p><br><br>
-                    
-                    <h5><p class="index">Impressioni</p></h5><br>
-                    <p class="index"><input type="text" name="impressioni"></p><br><br>
-                    
-                    <h5><p class="index">Fonte reperimento</p></h5><br>
-                    <p class="index"><input type="text" name="fonte_reperimento"></p><br><br>
-                    
-                    <h5><p class="index">Costo Giornaliero</p></h5><br>
-                    <p class="index"><input type="number" name="costo_giornaliero" step=0.01></p><br><br>
-                    
-                    <h5><p class="index">Possibilità Lavorativa</p></h5><br>
-                    <p class="index"><input type="text" name="possibilita_lavorativa"></p><br><br>
-                    
-                    <h5><p class="index">Skill</p></h5><br>
-                    <p class="index"><input type="text" name="skill"></p><br><br>
-                    
-                    
-                    <h5><p class="index">Tech</p></h5><br>
-        			<p class="index">
-                        <input type="text" name="input_tech1">
-                    </p>
-                    <botton class="add" onclick="add('input_tech2', 'add_tech2', 'remove_tech1', 'span_tech2', 'input_tech1')">+</botton><br>
-
-        			<h5><p class="index"></p></h5>
-        			<p class="index">
-                        <input type="text" id="input_tech2" name="input_tech2" style="display: none;">
-                    </p>
-                    <botton id="add_tech2" class="add" onclick="add('input_tech3', 'add_tech3', 'remove_tech2', 'span_tech3', 'input_tech2')" style="display: none"> + </botton>
-        			<botton id="remove_tech1" class="remove" onclick="remove('input_tech2', 'add_tech2', 'remove_tech1', 'span_tech2')" style="display: none">-</botton>
-                    <span id="span_tech2"></span>
-
-                    <h5><p class="index"></p></h5>
-        			<p class="index">
-                        <input type="text" id="input_tech3" name="input_tech3" style="display: none;">
-                    </p>
-                    <botton id="add_tech3" class="add" onclick="add('input_tech4', 'add_tech4', 'remove_tech3', 'span_tech4', 'input_tech3')" style="display: none;"> + </botton>
-        			<botton id="remove_tech2" class="remove" onclick="remove('input_tech3', 'add_tech3', 'remove_tech2', 'span_tech3')" style="display: none">-</botton>
-                    <span id="span_tech3"></span>
-        			
-        			<h5><p class="index"></p></h5>
-        			<p class="index">
-                        <input type="text" id="input_tech4" name="input_tech4" style="display: none;">
-                    </p>
-                    <botton id="add_tech4" class="add" onclick="add('input_tech5', 'add_tech4', 'remove_tech4', 'span_tech5', 'input_tech4')" style="display: none;">+</botton>
-        			<botton id="remove_tech3" class="remove" onclick="remove('input_tech4', 'add_tech4', 'remove_tech3', 'span_tech4')" style="display: none">-</botton>
-                    <span id="span_tech4"></span>
-        			
-        			<h5><p class="index"></p></h5>
-        			<p class="index">
-                        <input type="text" id="input_tech5" name="input_tech5" style="display: none;">
-                    </p>
-                    <botton id="remove_tech4" class="remove" onclick="remove('input_tech5', 'nulla', 'remove_tech4', 'span_tech5')" style="display: none; margin-left: 80%;">-</botton>
-        			<span id="span_tech5"></span>
-
-
-
-                    
-                    <h5><p class="index">Lingua</p></h5><br>
-        			<p class="index">
-                        <input type="text" name="input_lingua1">
-                    </p>
-                    <botton class="add" onclick="add('input_lingua2', 'add_lingua2', 'remove_lingua1', 'span_lingua2', 'input_lingua1')">+</botton><br>
-        			
-        			<h5><p class="index"></p></h5>
-        			<p class="index">
-                        <input type="text" id="input_lingua2" name="input_lingua2" style="display: none;">
-                    </p>
-                    <botton id="add_lingua2" class="add" onclick="add('input_lingua3', 'add_lingua2', 'remove_lingua2', 'span_lingua3', 'input_lingua2')" style="display: none">+</botton>
-        			<botton id="remove_lingua1" class="remove" onclick="remove('input_lingua2', 'add_lingua2', 'remove_lingua1', 'span_lingua2')" style="display: none">-</botton>
-                    <span id="span_lingua2"></span>
-        			
-                    <h5><p class="index"></p></h5>
-        			<p class="index">
-                        <input type="text" id="input_lingua3" name="input_lingua3" style="display: none;">
-                    </p>
-                    <botton id="remove_lingua2" class="remove" onclick="remove('input_lingua3', 'nulla', 'remove_lingua2', 'span_lingua3')" style="display: none; margin-left: 80%;">-</botton>
-        			<span id="span_lingua3"></span>
-                    
-
-
-
-
-                    <h5><p class="index">Competenze Totali</p></h5><br>
-                    <p class="index"><input type="text" name="competenze_totali"></p><br><br>
-                    
-                    <h5><p class="index">Certificazioni</p></h5><br>
-                    <p class="index"><input type="text" name="certificazioni"></p><br><br>
-                    
-                    <h5><p class="index">Seniority</p></h5><br>
-                    <p class="index"><input type="text" name="seniority"></p><br><br>
-                    
-                    <input type="hidden" name="Servlet" value="profilo">
-                    <br><br>
-                    <input type="submit" value="SALVA">
-                    <br><br><br>
-                </form>
+        <div class="conteiner head">
+            <div class="row header">
+                <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
+                <div class="col-md-2" style="text-align: right; margin-top: 1%">
+                    <form method="post" action="Servlet">
+                    	<input type="hidden" name="Servlet" value="logout">
+                    	<button class="esci">Esci</button>
+                    </form>
+                </div>
             </div>
-        </center>
+            <br>
+            <div class="row justify-content-center"><div class="col-md-9"><p class="utente"><a href="home.jsp">Home</a> > Profilo & CV</p></div></div>
+            <br><br>
+ 
+            <div class="row bianco">
+                <div class="col-md-12 pad">
+                    <b><h2><p style="text-align: center">Salva</p></h2></b>
+                </div>
+            </div>
+ 
+                <!--ANAGRAFICA-->
+ 			<form method="post" action="Servlet" name="profilo">
+ 				<div class="row grigio">
+	                <div class="col-md-3 pad">
+	                    <h5><p>Nome</p></h5>
+	                    <input class="profilo" type="text" name="nome">
+	                </div>
+	                <div class="col-md-3 pad">
+	                    <h5><p>Cognome</p></h5>
+	                    <input class="profilo" type="text" name="cognome">
+	                </div>
+	                <div class="col-md-3 pad">
+	                    <h5><p>Recapito</p></h5>
+	                    <input class="profilo" type="text" name="recapto">
+	                </div>
+	                <div class="col-md-3 pad">
+	                    <h5><p>Città di allocazione</p></h5>
+	                	<input class="profilo" type="text" name="allocazione">
+	                </div>
+	            </div>
+ 
+                <!--POSIZIONE-->
+ 				<div class="row bianco">
+	                <div class="col-md-6 pad">
+	                    <h5><p>Ruolo</p></h5>
+	                <input class="profilo" type="text" name="ruolo">
+	                </div>
+	                <div class="col-md-6 pad">
+	                    <h5><p>Competenza principale</p></h5>
+	                <input class="profilo" type="text" name="competenza_principale">
+	                </div>
+	            </div>
+ 
+                <!--COLLOQUIO-->
+ 				
+ 				<div class="row grigio">
+	                <div class="col-md-3 pad">
+	                    <h5><p>Data Colloquio</p></h5>
+	                    <input class="profilo" type="date" name="data_colloquio">
+	                </div>
+	                <div class="col-md-3 pad">
+	                    <h5><p>Anno Colloquio</p></h5>
+	                    <input class="profilo" type="number" name="anno_colloquio">
+	                </div>
+	                <div class="col-md-3 pad">
+	                    <h5><p>Esito Colloquio</p></h5>
+	                    <input class="profilo" type="text" name="esito_colloquio">
+	                </div>
+	                <div class="col-md-3 pad">
+	                    <h5><p>Impressioni</p></h5>
+	                    <input class="profilo" type="text" name="impressioni">
+	                </div>
+	            </div>
+ 
+                <!--CANDIDATURA-->
+ 
+ 				<div class="row bianco">
+	                <div class="col-md-12 pad margin">
+	                    <h5><p>Fonte reperimento</p></h5>
+	                    <input class="profilo" type="text" name="reperimento">
+	                </div>
+	            </div>
+ 
+                <!--COSTO-IMPIEGO-->
+ 
+ 				<div class="row grigio">
+	                <div class="col-md-6 pad">
+	                    <h5><p>Costo Giornaliero</p></h5>
+	                    <input class="profilo" type="number" name="costo_giornaliero" step=0.01>
+	                </div>
+	                <div class="col-md-6 pad">
+	                    <h5><p>Possibilità Lavorativa</p></h5>
+	                    <input class="profilo" type="text" name="possibilita">
+	                </div>
+	            </div>
+ 
+                <!--SKILL-TECH-->
+ 				<div class="row bianco">
+	                <div class="col-md-12 margin pad">
+	                    <h5><p>Skill</p></h5>
+	                    <input class="profilo" type="text" name="skill2">
+	                </div>
+	                
+	                <div class="col-md-9 offset-1 pad">
+	                    <h5><p>Tech</p></h5>
+	                    <input class="profilo" type="text" id="input_tech1" name="input_tech1">
+	                </div>
+	                <div class="col-md-1"><p class="profilo" onclick="add('tech2', 'input_tech1', 'Add_tech2', 'Rem_tech2')">+</p></div>
+	                
+	                <div id="tech2" class="col-md-9 offset-1 pad" style="display: none">
+	                    <h5><p>Tech2</p></h5>
+	                    <input class="profilo" type="text" id="input_tech2" name="input_tech2">
+	                </div>
+	                <div id="Rem_tech2" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech2', 'tech2', 'Rem_tech2', 'Add_tech2')">-</p></div>
+	                <div id="Add_tech2" class="col-md-1" style="display: none"><p class="profilo" onclick="add('tech3', 'input_tech2', 'Add_tech3', 'Rem_tech3')">+</p></div>
+	                
+	                <div id="tech3" class="col-md-9 offset-1 pad" style="display: none">
+	                    <h5><p>Tech3</p></h5>
+	                    <input class="profilo" type="text" id="input_tech3" name="input_tech3">
+	                </div>
+	                <div id="Rem_tech3" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech3', 'tech3', 'Add_tech3', 'Rem_tech3')">-</p></div>
+	                <div id="Add_tech3" class="col-md-1" style="display: none"><p class="profilo" onclick="add('tech4', 'input_tech3', 'Add_tech4', 'Rem_tech4')">+</p></div>
+	                
+	                <div id="tech4" class="col-md-9 offset-1 pad" style="display: none">
+	                    <h5><p>Tech4</p></h5>
+	                    <input class="profilo" type="text" id="input_tech4" name="input_tech4">
+	                </div>
+	                <div id="Rem_tech4" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech4', 'tech4', 'Add_tech4', 'Rem_tech4')">-</p></div>
+	                <div id="Add_tech4" class="col-md-1" style="display: none"><p class="profilo" onclick="add('tech5', 'input_tech4', '', 'Rem_tech5')">+</p></div>
+	                
+	                <div id="tech5" class="col-md-9 offset-1 pad" style="display: none">
+	                    <h5><p>Tech5</p></h5>
+	                    <input class="profilo" type="text" id="input_tech5" name="input_tech5">
+	                </div>
+	                <div id="Rem_tech5" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech5', 'tech5','', 'Rem_tech5')">-</p></div>
+	            </div>
+ 
+                <!--LINGUA-->
+ 				
+ 				<div class="row grigio">
+	                <div class="col-md-4 pad">
+	                    <h5><p>Lingua1</p></h5>
+	                    <input class="profilo" type="text" name="input_lingua1">
+	                </div>
+	                <div class="col-md-4 pad">
+	                    <h5><p>Lingua2</p></h5>
+	                    <input class="profilo" type="text" id="input_lingua2" name="input_lingua2">
+	                </div>
+	                <div class="col-md-4 pad">
+	                    <h5><p>Lingua3</p></h5>
+	                    <input class="profilo" type="text" id="input_lingua3" name="input_lingua3">
+	                </div>
+	            </div>
+ 
+                <!--INFO EXTRA-->
+ 				
+ 				<div class="row bianco">
+	                <div class="col-md-4 pad">
+	                    <h5><p>Competenze Totali</p></h5>
+	                    <input class="profilo" type="text" name="competenze_totali">
+	                </div>
+	                <div class="col-md-4 pad">
+	                    <h5><p>Certificazioni</p></h5>
+	                    <input class="profilo" type="text" name="certificazioni">
+	                </div>
+	                <div class="col-md-4 pad">
+	                    <h5><p>Seniority</p></h5>
+	                    <input class="profilo" type="text" name="seniority">
+	                </div>
+	                <div class="col-md-12" style="text-align: center;">
+	                	<br>
+	                    <input type="hidden" name="Servlet" value="profilo">
+	                    <input type="submit" value="SALVA" style="padding: 5px 25px 5px 25px;">
+	                    <br><br>
+	                </div>
+	            </div>
+	        </form>
+        </div> <!--container-->
+        <br><br><br><br><br><br>
     </body>
 </html>
+
 <%}%>

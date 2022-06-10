@@ -13,7 +13,7 @@
                 <h1>logo</h1>
             </div>
 
-            <div class="div1" style="width: 30%;">
+            <div class="bianco" style="width: 30%;">
                 <form method="POST" action="Servlet">
                     <br>
                     <b><h2><p class="index">Accedi</p></h2></b>

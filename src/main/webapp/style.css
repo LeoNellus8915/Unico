@@ -1,8 +1,8 @@
 @charset "ISO-8859-1";
 body
 {
-    background-color: #f1f1f1;
-    font-family: 'Roboto', sans-serif;
+    background-color: #f1f1f1 !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 /*-------------------------------------*/
 button.tabella
@@ -35,7 +35,7 @@ button.remove
 	font-size: 30;
 }
 /*-------------------------------------*/
-div.div1
+div.bianco
 {
     background-color: #ffffff;
     box-shadow: 5px 5px 2px rgb(179, 175, 175);
@@ -56,6 +56,19 @@ div.categorie
 div.head
 {
 	padding: 10 65 0 65;
+}
+div.grigio
+{
+	background-color: rgb(237, 237, 237);
+	box-shadow: 5px 5px 2px rgb(179, 175, 175);
+}
+div.pad
+{
+	padding: 15 15 15 15;
+}
+div.margin
+{
+	margin-left: 10%;
 }
 /*-------------------------------------*/
 input[type=submit]
@@ -86,6 +99,11 @@ input[type=text], input[type=password], input[type=number], input[type=date]
     width:137%;
     font-family: 'Roboto', sans-serif;
 }
+input.profilo
+{
+	width:80% !important;
+	border-radius: 5px !important;
+}
 /*-------------------------------------*/
 img.buste
 {
@@ -107,10 +125,6 @@ p.home
     color: white;
     font-size: 150%;
 }
-p.indexB
-{
-	text-align: center;
-}
 p.utente
 {
     position: absolute;
@@ -120,6 +134,11 @@ p.categorie
 {
     margin-top: -10%;
     font-weight: bold;
+}
+p.profilo
+{
+	font-size: 30;
+    margin-top: 50px;
 }
 /*-------------------------------------*/
 th.blue
