@@ -90,11 +90,11 @@
 	                </div>
 	                <div class="col-md-3 pad">
 	                    <h5><p>Recapito</p></h5>
-	                    <input class="profilo" type="text" name="recapto">
+	                    <input class="profilo" type="text" name="recapito">
 	                </div>
 	                <div class="col-md-3 pad">
 	                    <h5><p>Città di allocazione</p></h5>
-	                	<input class="profilo" type="text" name="allocazione">
+	                	<input class="profilo" type="text" name="citta_allocazione">
 	                </div>
 	            </div>
  
@@ -136,7 +136,7 @@
  				<div class="row bianco">
 	                <div class="col-md-12 pad margin">
 	                    <h5><p>Fonte reperimento</p></h5>
-	                    <input class="profilo" type="text" name="reperimento">
+	                    <input class="profilo" type="text" name="fonte_reperimento">
 	                </div>
 	            </div>
  
@@ -149,7 +149,7 @@
 	                </div>
 	                <div class="col-md-6 pad">
 	                    <h5><p>Possibilità Lavorativa</p></h5>
-	                    <input class="profilo" type="text" name="possibilita">
+	                    <input class="profilo" type="text" name="possibilita_lavorativa">
 	                </div>
 	            </div>
  
@@ -157,39 +157,39 @@
  				<div class="row bianco">
 	                <div class="col-md-9 offset-1 pad">
 	                    <h5><p>Skill</p></h5>
-	                    <input class="profilo" type="text" name="skill2">
+	                    <input class="profilo" type="text" name="skill">
 	                </div>
 	                
 	                <div class="col-md-9 offset-1 pad">
 	                    <h5><p>Tech</p></h5>
-	                    <input class="profilo" type="text" id="input_tech1" name="input_tech1">
+	                    <input class="profilo" type="text" id="input_tech1" name="tech1">
 	                </div>
 	                <div class="col-md-1"><p class="profilo" onclick="add('tech2', 'input_tech1', 'Add_tech2', 'Rem_tech2')">+</p></div>
 	                
 	                <div id="tech2" class="col-md-9 offset-1 pad" style="display: none">
 	                    <h5><p>Tech2</p></h5>
-	                    <input class="profilo" type="text" id="input_tech2" name="input_tech2">
+	                    <input class="profilo" type="text" id="input_tech2" name="tech2">
 	                </div>
 	                <div id="Rem_tech2" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech2', 'tech2', 'Rem_tech2', 'Add_tech2')">-</p></div>
 	                <div id="Add_tech2" class="col-md-1" style="display: none"><p class="profilo" onclick="add('tech3', 'input_tech2', 'Add_tech3', 'Rem_tech3')">+</p></div>
 	                
 	                <div id="tech3" class="col-md-9 offset-1 pad" style="display: none">
 	                    <h5><p>Tech3</p></h5>
-	                    <input class="profilo" type="text" id="input_tech3" name="input_tech3">
+	                    <input class="profilo" type="text" id="input_tech3" name="tech3">
 	                </div>
 	                <div id="Rem_tech3" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech3', 'tech3', 'Add_tech3', 'Rem_tech3')">-</p></div>
 	                <div id="Add_tech3" class="col-md-1" style="display: none"><p class="profilo" onclick="add('tech4', 'input_tech3', 'Add_tech4', 'Rem_tech4')">+</p></div>
 	                
 	                <div id="tech4" class="col-md-9 offset-1 pad" style="display: none">
 	                    <h5><p>Tech4</p></h5>
-	                    <input class="profilo" type="text" id="input_tech4" name="input_tech4">
+	                    <input class="profilo" type="text" id="input_tech4" name="tech4">
 	                </div>
 	                <div id="Rem_tech4" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech4', 'tech4', 'Add_tech4', 'Rem_tech4')">-</p></div>
 	                <div id="Add_tech4" class="col-md-1" style="display: none"><p class="profilo" onclick="add('tech5', 'input_tech4', '', 'Rem_tech5')">+</p></div>
 	                
 	                <div id="tech5" class="col-md-9 offset-1 pad" style="display: none">
 	                    <h5><p>Tech5</p></h5>
-	                    <input class="profilo" type="text" id="input_tech5" name="input_tech5">
+	                    <input class="profilo" type="text" id="input_tech5" name="tech5">
 	                </div>
 	                <div id="Rem_tech5" class="col-md-1" style="display: none"><p class="profilo" onclick="remove('input_tech5', 'tech5','', 'Rem_tech5')">-</p></div>
 	            </div>
@@ -199,15 +199,15 @@
  				<div class="row grigio">
 	                <div class="col-md-4 pad">
 	                    <h5><p>Lingua1</p></h5>
-	                    <input class="profilo" type="text" name="input_lingua1">
+	                    <input class="profilo" type="text" name="lingua1">
 	                </div>
 	                <div class="col-md-4 pad">
 	                    <h5><p>Lingua2</p></h5>
-	                    <input class="profilo" type="text" id="input_lingua2" name="input_lingua2">
+	                    <input class="profilo" type="text" id="input_lingua2" name="lingua2">
 	                </div>
 	                <div class="col-md-4 pad">
 	                    <h5><p>Lingua3</p></h5>
-	                    <input class="profilo" type="text" id="input_lingua3" name="input_lingua3">
+	                    <input class="profilo" type="text" id="input_lingua3" name="lingua3">
 	                </div>
 	            </div>
  

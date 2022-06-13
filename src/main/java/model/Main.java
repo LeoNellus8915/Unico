@@ -115,8 +115,8 @@ public class Main
 		data.add(" ");
 		return data;
 	}
-	public void salva (String nome, String cognome, String recapito, String citta_allocazione, String ruolo, String competenza_primaria, String data_colloquio,
-						String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, double costo_giornaliero,
+	public void salva (String nome, String cognome, String recapito, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+						String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, String costo_giornaliero,
 						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech5, String lingua1,
 						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
 	{
@@ -134,7 +134,7 @@ public class Main
         profilo.setRecapito(recapito);
         profilo.setCitta_allocazione(citta_allocazione);
         profilo.setRuolo(ruolo);
-        profilo.setCompetenza_principale(competenza_primaria);
+        profilo.setCompetenza_principale(competenza_principale);
         profilo.setData_colloquio(data_colloquio);
         profilo.setAnno_colloquio(anno_colloquio);
         profilo.setEsito_colloquio(esito_colloquio);

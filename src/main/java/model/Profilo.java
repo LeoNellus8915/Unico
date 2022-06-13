@@ -14,7 +14,7 @@ public class Profilo
 	private String esito_colloquio;
 	private String impressioni;
 	private String fonte_reperimento;
-	private double costo_giornaliero;
+	private String costo_giornaliero;
 	private String possibilita_lavorativa;
 	private String skill;
 	private String tech1;
@@ -32,7 +32,7 @@ public class Profilo
 	public Profilo () {}
 	
 	public Profilo (int id, String nome, String cognome, String recapito, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
-					String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, double costo_giornaliero,
+					String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, String costo_giornaliero,
 					String possiblita_lavorativa, String skill2, String tech1, String tech2, String tech3, String tech4, String tech5, String lingua1,
 					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)
 	{
@@ -184,12 +184,12 @@ public class Profilo
 		this.fonte_reperimento = fonte_reperimento;
 	}
 
-	public double getCosto_giornaliero()
+	public String getCosto_giornaliero()
 	{
 		return costo_giornaliero;
 	}
 
-	public void setCosto_giornaliero(double costo_giornaliero)
+	public void setCosto_giornaliero(String costo_giornaliero)
 	{
 		this.costo_giornaliero = costo_giornaliero;
 	}
