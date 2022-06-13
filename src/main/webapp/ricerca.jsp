@@ -49,12 +49,13 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="javascript.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body onload="ricerca()">
         <div class="conteiner head"">
             <div class="row header">
                 <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
@@ -66,47 +67,20 @@
                 </div>
             </div>
             <br>
-            <div class="row justify-content-center"><div class="col-md-9"><p class="utente">Home > <%String x = (String)session.getAttribute("Utente"); out.println(x);%></p></div></div>
+            <div class="row justify-content-center"><div class="col-md-9"><p class="utente"><a href="home.jsp">Home</a> > Ricerca</p></div></div>
             <br><br>
-            <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
-                <div class="col-lg-2 categorie">
-                    <img src="Immagini/a.svg"><br><br><br>
-                    <p class="categorie">Modulo Presenze</p>
-                </div>
-                <div class="col-lg-2 offset-1 categorie"><a href="bustepaga.jsp">
-                    <img src="Immagini/b.svg" style="margin-left: 10%"><br><br><br>
-                    <p class="categorie">Buste Paga</p>
-                </a></div>
-                <div class="col-lg-2 offset-1 categorie"><a href="certificazione_unica.jsp">
-                    <img src="Immagini/c.svg"><br><br><br>
-                    <p class="categorie">Certificazione Unica</p>
-                </a></div>
-                <div class="col-lg-2 offset-1 categorie">
-                    <img src="Immagini/d.svg"><br><br><br>
-                    <p class="categorie">Commesse</p>
-                </div>
-            </div>
-            <br><br>
-            <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
-                <div class="col-md-2 categorie">
-                    <img src="Immagini/e.svg"><br><br><br>
-                    <p class="categorie">Certificazioni</p>
-                </div>
-                <div class="col-md-2 offset-1 categorie">
-                    <img src="Immagini/f.svg"><br><br><br>
-                    <p class="categorie">Corso Sicurezza</p>
-                </div>
-                <div class="col-md-2 offset-1 categorie">
-                    <img src="Immagini/g.svg" style="margin-top: 7%"><br><br><br>
-                    <p class="categorie" style="margin-left: 2%">Visita Medica</p>
-                </div>
-                <div class="col-md-2 offset-1 categorie"><a href="ricerca.jsp">
-                    <img src="Immagini/h.svg" style="margin-top: 7%"><br><br><br>
-                    <p class="categorie" style="margin-right: 2%">Profilo & CV</p>
-                </a></div>
-            </div>
+            <div class="row categorie">
+            	<div class="col-md-3 offset-1 ricerca">
+            		<input id="ricerca" type="text">
+            		<button id="filtro">Cerca</button>
+            	</div>
+            	<div class="col-md-1 offset-7"><a href="profilo&cv.jsp"><button class="add">+</button></a></div>
+           	</div>
+           	<div class="row categorie">
+           		<div id="bella" class="col-md-6 offset-1"><br></div>
+            	<br><br>
+           	</div>
         </div>
-        <br><br>
     </body>
 </html>
 <%}%>

@@ -7,6 +7,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -93,6 +95,11 @@ public class Servlet extends HttpServlet
 						competenze_totali, certificazioni, seniority);
 			disp = request.getRequestDispatcher("home.jsp");
 			disp.forward(request, response);
+		}
+		if (servlet.equals("ricerca"))
+		{
+			List profili = main.ricerca();
+			response.getWriter().println(profili);
 		}
 	}
 }

@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
+import com.corso.model.Actor;
+
 import model.Utente;
 import model.Bustepaga;
 
@@ -158,5 +160,23 @@ public class Main
         controllo.save(profilo);
         controllo.getTransaction().commit();
         controllo.close();
+	}
+	public List ricerca()
+	{
+		List profili = new ArrayList();
+		profili.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+        Query q_id = controllo.createQuery("select id from Profilo");
+        Query q_nome = controllo.createQuery("select nome from Profilo");
+        Query q_cognome = controllo.createQuery("select cognome from Profilo");
+        List lista_id = q_id.list();
+        List lista_nomi = q_nome.list();
+        List lista_cognomi = q_cognome.list();
+        for (int c=0; c<lista_id.size(); c++)
+        	profili.add((Integer)lista_id.get(c) + "        " + (String)lista_nomi.get(c) + " " + (String)lista_cognomi.get(c));
+        profili.add(" ");
+        controllo.close();
+        return profili;
 	}
 }

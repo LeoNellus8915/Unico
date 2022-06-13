@@ -104,39 +104,45 @@ input.profilo
 	width:80% !important;
 	border-radius: 5px !important;
 }
+input.ricerca
+{
+	width:80% !important;
+	border-radius: 5px !important;
+}
 /*-------------------------------------*/
 img.buste
 {
     height: 40%;
 }
 /*-------------------------------------*/
-p
-{
-    color: rgb(12, 12, 135);
-}
 p.index
 {
+	color: rgb(12, 12, 135);
     margin: 0;
     position: absolute;
     left: 40%;
 }
 p.home
 {
+	color: rgb(12, 12, 135);
     color: white;
     font-size: 150%;
 }
 p.utente
 {
+	color: rgb(12, 12, 135);
     position: absolute;
     left: -8%;
 }
 p.categorie
 {
+	color: rgb(12, 12, 135);
     margin-top: -10%;
     font-weight: bold;
 }
 p.profilo
 {
+	color: rgb(12, 12, 135);
 	font-size: 30;
     margin-top: 50px;
 }

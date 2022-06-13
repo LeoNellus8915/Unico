@@ -309,9 +309,32 @@ function add(div, controllo, bottone, remove)
 }
 function remove(input, div, piu, meno)
 {
-        document.getElementById(input).value = '';
-        document.getElementById(div).style.display = 'none';
-        document.getElementById(meno).style.display = 'none';  
-        if (document.getElementById(piu) != null)
-        	document.getElementById(piu).style.display = 'none';
-} 
+    document.getElementById(input).value = '';
+    document.getElementById(div).style.display = 'none';
+    document.getElementById(meno).style.display = 'none';  
+    if (document.getElementById(piu) != null)
+    	document.getElementById(piu).style.display = 'none';
+}
+function ricerca()
+{
+	var xhttp = new XMLHttpRequest();
+				
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet="+"ricerca");
+	
+	xhttp.onreadystatechange = function()
+    {
+    	if (this.readyState == 4 && this.status == 200)
+        {
+   			var risposta = xhttp.responseText;
+   			profili = risposta.split(", ");
+   			for (var c = 1; c<profili.length-1; c++)
+   			{
+   				const paragrafo = document.createElement("p");
+				paragrafo.innerText = profili[c];
+				document.getElementById("bella").appendChild(paragrafo);
+			}
+		}
+	}
+}
