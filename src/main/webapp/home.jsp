@@ -74,8 +74,8 @@
                     <p class="categorie">Modulo Presenze</p>
                 </div>
                 <div class="col-lg-2 offset-1 categorie"><a href="bustepaga.jsp">
-                    <img src="Immagini/b.svg"><br><br><br>
-                    <p class="categorie" style="margin-right: 5%">Buste Paga</p>
+                    <img src="Immagini/b.svg" style="margin-left: 10%"><br><br><br>
+                    <p class="categorie">Buste Paga</p>
                 </a></div>
                 <div class="col-lg-2 offset-1 categorie"><a href="certificazione_unica.jsp">
                     <img src="Immagini/c.svg"><br><br><br>
