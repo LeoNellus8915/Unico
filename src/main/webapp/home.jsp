@@ -79,7 +79,7 @@
                 </a></div>
                 <div class="col-lg-2 offset-1 categorie"><a href="certificazione_unica.jsp">
                     <img src="Immagini/c.svg"><br><br><br>
-                    <p class="categorie">Crtificazione Unica</p>
+                    <p class="categorie">Certificazione Unica</p>
                 </a></div>
                 <div class="col-lg-2 offset-1 categorie">
                     <img src="Immagini/d.svg"><br><br><br>
