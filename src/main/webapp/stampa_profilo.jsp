@@ -72,7 +72,7 @@
             </div>
             <br><br>
            	<div class="row categorie">
-           		<div id="bella" class="col-md-6 offset-1"><br></div>
+           		<div id="bella" class="col-md-6 offset-1"></div>
             	<br><br>
            	</div>
         </div>

@@ -351,7 +351,6 @@ function stampa_profilo()
 	
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	console.log(localStorage.getItem("dato"));
 	xhttp.send("Servlet="+localStorage.getItem("dato"));
 	xhttp.onreadystatechange = function()
     {
