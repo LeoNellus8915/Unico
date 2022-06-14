@@ -315,6 +315,11 @@ function remove(input, div, piu, meno)
     if (document.getElementById(piu) != null)
     	document.getElementById(piu).style.display = 'none';
 }
+
+//variabile di appoggio
+var x;
+//variabile di appoggio
+
 function ricerca()
 {
 	var xhttp = new XMLHttpRequest();
@@ -331,8 +336,37 @@ function ricerca()
    			profili = risposta.split(", ");
    			for (var c = 1; c<profili.length-1; c++)
    			{
-   				const paragrafo = document.createElement("p");
+			    const paragrafo = document.createElement("p");
+			    paragrafo.onclick = function profilo ()
+			    {
+					window.open("stampa_profilo.jsp", "_blank");
+					x = 1;
+    				
+				}
 				paragrafo.innerText = profili[c];
+				document.getElementById("bella").appendChild(paragrafo);
+			}
+		}
+	}
+}
+function stampa_profilo()
+{
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet="+x);
+	xhttp.onreadystatechange = function()
+    {
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_profilo = xhttp.responseText;
+			profilo = risposta_profilo.split(", ");
+			for (var c = 1; c<profilo.length-1; c++)
+			{
+				const paragrafo = document.createElement("p");
+				paragrafo.innerText = profilo[c];
+				console.log("a");
 				document.getElementById("bella").appendChild(paragrafo);
 			}
 		}

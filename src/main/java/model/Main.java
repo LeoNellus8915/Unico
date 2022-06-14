@@ -179,4 +179,44 @@ public class Main
         controllo.close();
         return profili;
 	}
+	public List ricercaProfilo(String id)
+	{
+		List profili = new ArrayList();
+		Profilo profilo = new Profilo();
+		profili.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+        Query q = controllo.createQuery("from Profilo where id = 1");
+        q.uniqueResult();
+        List lista = q.list();
+        profilo = (Profilo) lista.get(0);
+        profili.add(profilo.getNome());
+        profili.add(profilo.getCognome());
+        profili.add(profilo.getRecapito());
+        profili.add(profilo.getCitta_allocazione());
+        profili.add(profilo.getRuolo());
+        profili.add(profilo.getCompetenza_principale());
+        profili.add(profilo.getData_colloquio());
+        profili.add(profilo.getAnno_colloquio());
+        profili.add(profilo.getEsito_colloquio());
+        profili.add(profilo.getImpressioni());
+        profili.add(profilo.getFonte_reperimento());
+        profili.add(profilo.getCosto_giornaliero());
+        profili.add(profilo.getPossibilita_lavorativa());
+        profili.add(profilo.getSkill());
+        profili.add(profilo.getTech1());
+        profili.add(profilo.getTech2());
+        profili.add(profilo.getTech3());
+        profili.add(profilo.getTech4());
+        profili.add(profilo.getTech5());
+        profili.add(profilo.getLingua1());
+        profili.add(profilo.getLingua2());
+        profili.add(profilo.getLingua3());
+        profili.add(profilo.getCompetenze_totali());
+        profili.add(profilo.getCertificazioni());
+        profili.add(profilo.getSeniority());
+        profili.add(" ");
+        controllo.close();
+        return profili;
+	}
 }

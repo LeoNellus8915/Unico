@@ -22,6 +22,12 @@
   	<description></description>
   	<servlet-class>controller.Servlet_Certificazione_Unica</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Servlet_Ricerca</servlet-name>
+  	<display-name>Servlet_Ricerca</display-name>
+  	<description></description>
+  	<servlet-class>controller.Servlet_Ricerca</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Servlet</servlet-name>
   	<url-pattern>/Servlet</url-pattern>
@@ -33,5 +39,9 @@
   <servlet-mapping>
   	<servlet-name>Servlet_Certificazione_Unica</servlet-name>
   	<url-pattern>/Servlet_Certificazione_Unica</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Servlet_Ricerca</servlet-name>
+  	<url-pattern>/Servlet_Ricerca</url-pattern>
   </servlet-mapping>
 </web-app>
