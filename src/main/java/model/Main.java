@@ -186,7 +186,7 @@ public class Main
 		profili.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-        Query q = controllo.createQuery("from Profilo where id = 1");
+        Query q = controllo.createQuery("from Profilo where id = " + id);
         q.uniqueResult();
         List lista = q.list();
         profilo = (Profilo) lista.get(0);

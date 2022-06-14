@@ -67,7 +67,9 @@
                 </div>
             </div>
             <br>
-            <div class="row justify-content-center"><div class="col-md-9"><p class="utente"><a href="home.jsp">Home</a> > Ricerca</p></div></div>
+            <div class="row justify-content-center">
+            	<div class="col-md-9"><p class="utente"><a href="home.jsp">Home</a> > <a href="ricerca.jsp">Ricerca</a> > <p id="nome">&nbsp</p></p></div>
+            </div>
             <br><br>
            	<div class="row categorie">
            		<div id="bella" class="col-md-6 offset-1"><br></div>

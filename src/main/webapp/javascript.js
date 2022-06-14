@@ -316,10 +316,6 @@ function remove(input, div, piu, meno)
     	document.getElementById(piu).style.display = 'none';
 }
 
-//variabile di appoggio
-var x;
-//variabile di appoggio
-
 function ricerca()
 {
 	var xhttp = new XMLHttpRequest();
@@ -337,11 +333,11 @@ function ricerca()
    			for (var c = 1; c<profili.length-1; c++)
    			{
 			    const paragrafo = document.createElement("p");
-			    paragrafo.onclick = function profilo ()
+			    paragrafo.id = c;
+			    paragrafo.onclick = function ()
 			    {
-					window.open("stampa_profilo.jsp", "_blank");
-					x = 1;
-    				
+					window.open("stampa_profilo.jsp", "_self");
+					localStorage.setItem("dato", this.id);
 				}
 				paragrafo.innerText = profili[c];
 				document.getElementById("bella").appendChild(paragrafo);
@@ -355,18 +351,19 @@ function stampa_profilo()
 	
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet="+x);
+	console.log(localStorage.getItem("dato"));
+	xhttp.send("Servlet="+localStorage.getItem("dato"));
 	xhttp.onreadystatechange = function()
     {
 		if (this.readyState == 4 && this.status == 200)
 		{
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", ");
+			document.getElementById("nome").innerHTML = "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + profilo[1] + " " + profilo[2];
 			for (var c = 1; c<profilo.length-1; c++)
 			{
 				const paragrafo = document.createElement("p");
 				paragrafo.innerText = profilo[c];
-				console.log("a");
 				document.getElementById("bella").appendChild(paragrafo);
 			}
 		}
