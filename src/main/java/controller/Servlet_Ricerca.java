@@ -22,8 +22,6 @@ public class Servlet_Ricerca extends HttpServlet
 		Main main = new Main();
 		String servlet = request.getParameter("Servlet");
 		String[] info = servlet.split(",");
-		System.out.println(info[0]);
-		System.out.println(info[1]);
 		if (info[0].equals("stampa_profilo"))
 		{
 			List profili = main.ricercaProfilo(info[1]);
