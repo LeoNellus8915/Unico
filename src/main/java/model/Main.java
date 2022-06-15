@@ -7,8 +7,6 @@ import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-import com.corso.model.Actor;
-
 import model.Utente;
 import model.Bustepaga;
 
@@ -174,7 +172,7 @@ public class Main
         List lista_nomi = q_nome.list();
         List lista_cognomi = q_cognome.list();
         for (int c=0; c<lista_id.size(); c++)
-        	profili.add((Integer)lista_id.get(c) + "        " + (String)lista_nomi.get(c) + " " + (String)lista_cognomi.get(c));
+        	profili.add((Integer)lista_id.get(c) + " " + (String)lista_nomi.get(c) + " " + (String)lista_cognomi.get(c));
         profili.add(" ");
         controllo.close();
         return profili;
@@ -215,6 +213,24 @@ public class Main
         profili.add(profilo.getCompetenze_totali());
         profili.add(profilo.getCertificazioni());
         profili.add(profilo.getSeniority());
+        profili.add(" ");
+        controllo.close();
+        return profili;
+	}
+	public List filtra (String filtro)
+	{
+		List profili = new ArrayList();
+		Profilo profilo = new Profilo();
+		profili.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q_id = controllo.createQuery("select id from Profilo where id = '" + filtro + "' or nome = '" + filtro + "' or cognome = '" + filtro + "'");
+        Query q_nome = controllo.createQuery("select nome from Profilo where id = '" + filtro + "' or nome = '" + filtro + "' or cognome = '" + filtro + "'");
+        Query q_cognome = controllo.createQuery("select cognome from Profilo where id = '" + filtro + "' or nome = '" + filtro + "' or cognome = '" + filtro + "'");
+        List lista_id = q_id.list();
+        List lista_nomi = q_nome.list();
+        List lista_cognomi = q_cognome.list();
+        profili.add((Integer)lista_id.get(0) + " " + (String)lista_nomi.get(0) + " " + (String)lista_cognomi.get(0));
         profili.add(" ");
         controllo.close();
         return profili;

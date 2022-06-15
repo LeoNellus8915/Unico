@@ -144,9 +144,9 @@ function bustepaga()
 {    
 	var xhttp = new XMLHttpRequest();
     
-	xhttp.open("POST", 'Servlet_Bustepaga', true);
+	xhttp.open("POST", 'Servlet_Ricerca', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("Servlet="+"mesi");
+    xhttp.send("Servlet="+"lettura_mese, ");
     xhttp.onreadystatechange = function()
     {
     	if (this.readyState == 4 && this.status == 200)
@@ -221,9 +221,9 @@ async function invio(mese, pdf)
 		{
 			document.getElementById(pdf).click();
 			
-			xhttp.open("POST", 'Servlet_Bustepaga', true);
+			xhttp.open("POST", 'Servlet_Ricerca', true);
     		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    		xhttp.send("Servlet="+mese);
+    		xhttp.send("Servlet="+"scrittura_mese,"+mese);
     		
     		await sleep(1000);
     		bustepaga();
@@ -240,9 +240,9 @@ function certificazione_unica()
 {    
 	var xhttp = new XMLHttpRequest();
     
-	xhttp.open("POST", 'Servlet_Certificazione_Unica', true);
+	xhttp.open("POST", 'Servlet_Ricerca', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("Servlet="+"anni");
+    xhttp.send("Servlet="+"lettura_anno, ");
     xhttp.onreadystatechange = function()
     {
     	if (this.readyState == 4 && this.status == 200)
@@ -285,9 +285,9 @@ async function invio2(anno, pdf)
 		{
 			document.getElementById(pdf).click();
 			
-			xhttp.open("POST", 'Servlet_Certificazione_Unica', true);
+			xhttp.open("POST", 'Servlet_Ricerca', true);
     		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    		xhttp.send("Servlet="+anno);
+    		xhttp.send("Servlet="+"scrittura_anno,"+anno);
     		
     		await sleep(1000);
     		certificazione_unica();
@@ -340,7 +340,7 @@ function ricerca()
 					localStorage.setItem("dato", this.id);
 				}
 				paragrafo.innerText = profili[c];
-				document.getElementById("bella").appendChild(paragrafo);
+				document.getElementById("curriculum").appendChild(paragrafo);
 			}
 		}
 	}
@@ -351,7 +351,7 @@ function stampa_profilo()
 	
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet="+localStorage.getItem("dato"));
+	xhttp.send("Servlet="+"stampa_profilo,"+localStorage.getItem("dato"));
 	xhttp.onreadystatechange = function()
     {
 		if (this.readyState == 4 && this.status == 200)
@@ -363,8 +363,35 @@ function stampa_profilo()
 			{
 				const paragrafo = document.createElement("p");
 				paragrafo.innerText = profilo[c];
-				document.getElementById("bella").appendChild(paragrafo);
+				document.getElementById("curriculum").appendChild(paragrafo);
 			}
+		}
+	}
+}
+function cerca()
+{
+	var ricerca = document.getElementById("ricerca").value;
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet="+"ricerca,"+ricerca);
+	xhttp.onreadystatechange = function()
+    {
+		if (this.readyState == 4 && this.status == 200)
+        {
+   			var risposta = xhttp.responseText;
+   			profili = risposta.split(", ");
+			const paragrafo = document.createElement("p");
+			paragrafo.id = risposta[4];
+			paragrafo.onclick = function ()
+		    {
+				window.open("stampa_profilo.jsp", "_self");
+				localStorage.setItem("dato", this.id);
+			}
+			paragrafo.innerText = profili[1];
+			document.getElementById("curriculum").innerHTML = " ";
+			document.getElementById("curriculum").appendChild(paragrafo);
 		}
 	}
 }

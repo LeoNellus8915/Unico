@@ -20,8 +20,44 @@ public class Servlet_Ricerca extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		Main main = new Main();
-		String id = request.getParameter("Servlet");
-		List profili = main.ricercaProfilo(id);
-		response.getWriter().println(profili);
+		String servlet = request.getParameter("Servlet");
+		String[] info = servlet.split(",");
+		System.out.println(info[0]);
+		System.out.println(info[1]);
+		if (info[0].equals("stampa_profilo"))
+		{
+			List profili = main.ricercaProfilo(info[1]);
+			response.getWriter().println(profili);
+		}
+		if (info[0].equals("ricerca"))
+		{
+			List profili = main.filtra(info[1]);
+			response.getWriter().println(profili);
+		}
+		if (info[0].equals("lettura_anno"))
+		{
+			ArrayList date = main.getData_Anni();
+			response.getWriter().println(date);
+		}
+		if (info[0].equals("scrittura_anno"))
+		{
+			System.out.println(info[1]);
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
+			LocalDateTime now = LocalDateTime.now();  
+			String data = dtf.format(now);  
+			main.certificazione_unica_data(data, info[1]);
+		}
+		if (info[0].equals("lettura_mese"))
+		{
+			ArrayList date = main.getData_Mesi();
+			response.getWriter().println(date);
+		}
+		if (info[0].equals("scrittura_mese"))
+		{
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
+			LocalDateTime now = LocalDateTime.now();  
+			String data = dtf.format(now);  
+			main.bustepaga_data(data, info[1]);
+		}
 	}
 }

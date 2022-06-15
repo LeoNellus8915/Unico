@@ -72,12 +72,12 @@
             <div class="row categorie">
             	<div class="col-md-3 offset-1 ricerca">
             		<input id="ricerca" type="text">
-            		<button id="filtro">Cerca</button>
+            		<button id="filtro" onclick="cerca()">Cerca</button>
             	</div>
             	<div class="col-md-1 offset-7"><a href="profilo&cv.jsp"><button class="add">+</button></a></div>
            	</div>
            	<div class="row categorie">
-           		<div id="bella" class="col-md-6 offset-1"><br></div>
+           		<div id="curriculum" class="col-md-6 offset-1"><br></div>
             	<br><br>
            	</div>
         </div>
