@@ -235,4 +235,22 @@ public class Main
         controllo.close();
         return profili;
 	}
+	public void aggiorna_cv (String nome, String cognome, String recapito, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+			String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, String costo_giornaliero,
+			String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech5, String lingua1,
+			String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
+	{
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("update Profilo set nome = '" + nome + "', cognome = '" + cognome + "', recapito = '" + recapito 
+				+ "', citta_allocazione = '" + citta_allocazione + "', ruolo = '" + ruolo + "', competenza_principale = '" + competenza_principale 
+				+ "', data_colloquio = '" + data_colloquio + "', anno_colloquio = '" + anno_colloquio + "', esito_colloquio = '" + esito_colloquio
+				+ "', impressioni = '" + impressioni + "', fonte_reperimento = '" + fonte_reperimento + "', costo_giornaliero = '" + costo_giornaliero 
+				+ "', possibilita_lavorativa = '" + possibilita_lavorativa + "', skill = '" + skill + "', tech1 = '" + tech1 + "', tech2 = '" + tech2
+				+ "', tech3 = '" + tech3 + "', tech4 = '" + tech4 + "', tech5 = '" + tech5 + "', lingua1 = '" + lingua1 + "', lingua2 = '" + lingua2
+				+ "', lingua3 = '" + lingua3 + "', competenze_totali = '" + competenze_totali + "', certificazioni = '" + certificazioni
+				+ "', seniority = '" + seniority + "' where nome = '" + nome + "' and cognome = '" + cognome + "'");
+		q.executeUpdate();
+		controllo.close();
+	}
 }
