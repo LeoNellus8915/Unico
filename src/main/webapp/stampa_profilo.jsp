@@ -103,7 +103,7 @@ impedito l'inserimento/modifica dei campi (disabled)  -->
 								</div>
 								<div class="col-md-2">
 									<input type="hidden" name="Servlet" value="scarica_cv">
-									<input type="submit"value="Scarica Cv">
+									<input type="submit" onclick="scarica()" value="Scarica Cv">
 								</div>
 								<div class="col-md-2">
 									<input type="hidden" name="Servlet" value="genera_cv">
@@ -293,6 +293,7 @@ impedito l'inserimento/modifica dei campi (disabled)  -->
 		<br> <br>
 	</div> <!-- Fine Container Head -->
 	<br><br><br>
+	<div type="hidden" id="scarica_cv"></div>
 </body>
 </html>
 <%}%>
