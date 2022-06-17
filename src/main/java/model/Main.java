@@ -115,12 +115,13 @@ public class Main
 		data.add(" ");
 		return data;
 	}
-	public void salva (String nome, String cognome, String recapito, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+	public void salva (String nome, String cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 						String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, String costo_giornaliero,
-						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech5, String lingua1,
+						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
 	{
 		Profilo profilo = new Profilo();
+		Commenti commento = new Commenti();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q = controllo.createQuery("select max(id) from Profilo");
@@ -132,13 +133,13 @@ public class Main
         profilo.setNome(nome);
         profilo.setCognome(cognome);
         profilo.setRecapito(recapito);
+        profilo.setEmail(email);
         profilo.setCitta_allocazione(citta_allocazione);
         profilo.setRuolo(ruolo);
         profilo.setCompetenza_principale(competenza_principale);
         profilo.setData_colloquio(data_colloquio);
         profilo.setAnno_colloquio(anno_colloquio);
         profilo.setEsito_colloquio(esito_colloquio);
-        profilo.setImpressioni(impressioni);
         profilo.setFonte_reperimento(fonte_reperimento);
         profilo.setCosto_giornaliero(costo_giornaliero);
         profilo.setPossibilita_lavorativa(possibilita_lavorativa);
@@ -147,7 +148,7 @@ public class Main
         profilo.setTech2(tech2);
         profilo.setTech3(tech3);
         profilo.setTech4(tech4);
-        profilo.setTech5(tech5);
+        profilo.setTech_campo_libero(tech_campo_libero);
         profilo.setLingua1(lingua1);
         profilo.setLingua2(lingua2);
         profilo.setLingua3(lingua3);
@@ -155,6 +156,10 @@ public class Main
         profilo.setCertificazioni(certificazioni);
         profilo.setSeniority(seniority);
         
+        commento.setId(profilo.getId());
+        commento.setCommento(impressioni);
+        
+        controllo.save(commento);
         controllo.save(profilo);
         controllo.getTransaction().commit();
         controllo.close();
@@ -191,13 +196,13 @@ public class Main
         profili.add(profilo.getNome()!=null?profilo.getNome():"");
         profili.add(profilo.getCognome()!=null?profilo.getCognome():"");
         profili.add(profilo.getRecapito()!=null?profilo.getRecapito():"");
+        profili.add(profilo.getEmail()!=null?profilo.getEmail():"");
         profili.add(profilo.getCitta_allocazione()!=null?profilo.getCitta_allocazione():"");
         profili.add(profilo.getRuolo()!=null?profilo.getRuolo():"");
         profili.add(profilo.getCompetenza_principale()!=null?profilo.getCompetenza_principale():"");
         profili.add(profilo.getData_colloquio()!=null?profilo.getData_colloquio():"");
         profili.add(profilo.getAnno_colloquio()!=null?profilo.getAnno_colloquio():"");
         profili.add(profilo.getEsito_colloquio()!=null?profilo.getEsito_colloquio():"");
-        profili.add(profilo.getImpressioni()!=null?profilo.getImpressioni():"");
         profili.add(profilo.getFonte_reperimento()!=null?profilo.getFonte_reperimento():"");
         profili.add(profilo.getCosto_giornaliero()!=null?profilo.getCosto_giornaliero():"");
         profili.add(profilo.getPossibilita_lavorativa()!=null?profilo.getPossibilita_lavorativa():"");
@@ -206,7 +211,7 @@ public class Main
         profili.add(profilo.getTech2()!=null?profilo.getTech2():"");
         profili.add(profilo.getTech3()!=null?profilo.getTech3():"");
         profili.add(profilo.getTech4()!=null?profilo.getTech4():"");
-        profili.add(profilo.getTech5()!=null?profilo.getTech5():"");
+        profili.add(profilo.getTech_campo_libero()!=null?profilo.getTech_campo_libero():"");
         profili.add(profilo.getLingua1()!=null?profilo.getLingua1():"");
         profili.add(profilo.getLingua2()!=null?profilo.getLingua2():"");
         profili.add(profilo.getLingua3()!=null?profilo.getLingua3():"");
@@ -235,19 +240,19 @@ public class Main
         controllo.close();
         return profili;
 	}
-	public void aggiorna_cv (String nome, String cognome, String recapito, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
-			String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, String costo_giornaliero,
-			String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech5, String lingua1,
+	public void aggiorna_cv (String nome, String cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+			String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
+			String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 			String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q = controllo.createQuery("update Profilo set nome = '" + nome + "', cognome = '" + cognome + "', recapito = '" + recapito 
-				+ "', citta_allocazione = '" + citta_allocazione + "', ruolo = '" + ruolo + "', competenza_principale = '" + competenza_principale 
+				+ "', email = '" + email + "', citta_allocazione = '" + citta_allocazione + "', ruolo = '" + ruolo + "', competenza_principale = '" + competenza_principale 
 				+ "', data_colloquio = '" + data_colloquio + "', anno_colloquio = '" + anno_colloquio + "', esito_colloquio = '" + esito_colloquio
-				+ "', impressioni = '" + impressioni + "', fonte_reperimento = '" + fonte_reperimento + "', costo_giornaliero = '" + costo_giornaliero 
+				+ "', fonte_reperimento = '" + fonte_reperimento + "', costo_giornaliero = '" + costo_giornaliero 
 				+ "', possibilita_lavorativa = '" + possibilita_lavorativa + "', skill = '" + skill + "', tech1 = '" + tech1 + "', tech2 = '" + tech2
-				+ "', tech3 = '" + tech3 + "', tech4 = '" + tech4 + "', tech5 = '" + tech5 + "', lingua1 = '" + lingua1 + "', lingua2 = '" + lingua2
+				+ "', tech3 = '" + tech3 + "', tech4 = '" + tech4 + "', tech_campo_libero = '" + tech_campo_libero + "', lingua1 = '" + lingua1 + "', lingua2 = '" + lingua2
 				+ "', lingua3 = '" + lingua3 + "', competenze_totali = '" + competenze_totali + "', certificazioni = '" + certificazioni
 				+ "', seniority = '" + seniority + "' where nome = '" + nome + "' and cognome = '" + cognome + "'");
 		q.executeUpdate();

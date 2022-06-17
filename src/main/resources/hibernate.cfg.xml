@@ -16,5 +16,10 @@
       <mapping resource = "model/Bustepaga.hbm.xml"/>
       <mapping resource = "model/Certificazione_Unica.hbm.xml"/>
       <mapping resource = "model/Profilo.hbm.xml"/>
+      <mapping resource = "model/Commento.hbm.xml"/>
+      <mapping resource = "model/Lingua.hbm.xml"/>
+      <mapping resource = "model/Seniority.hbm.xml"/>
+      <mapping resource = "model/Skill.hbm.xml"/>
+      <mapping resource = "model/Tech.hbm.xml"/>
    </session-factory>
 </hibernate-configuration>

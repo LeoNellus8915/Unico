@@ -6,13 +6,13 @@ public class Profilo
 	private String nome;
 	private String cognome;
 	private String recapito;
+	private String email;
 	private String citta_allocazione;
 	private String ruolo;
 	private String competenza_principale;
 	private String data_colloquio;
 	private String anno_colloquio;
 	private String esito_colloquio;
-	private String impressioni;
 	private String fonte_reperimento;
 	private String costo_giornaliero;
 	private String possibilita_lavorativa;
@@ -21,7 +21,7 @@ public class Profilo
 	private String tech2;
 	private String tech3;
 	private String tech4;
-	private String tech5;
+	private String tech_campo_libero;
 	private String lingua1;
 	private String lingua2;
 	private String lingua3;
@@ -31,22 +31,22 @@ public class Profilo
 	
 	public Profilo () {}
 	
-	public Profilo (int id, String nome, String cognome, String recapito, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
-					String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, String costo_giornaliero,
-					String possiblita_lavorativa, String skill2, String tech1, String tech2, String tech3, String tech4, String tech5, String lingua1,
+	public Profilo (int id, String nome, String cognome, String recapito, String email, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
+					String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
+					String possiblita_lavorativa, String skill2, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)
 	{
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.recapito = recapito;
+		this.email = email;
 		this.citta_allocazione = citta_allocazione;
 		this.ruolo = ruolo;
 		this.competenza_principale = competenza_principale;
 		this.data_colloquio = data_colloquio;
 		this.anno_colloquio = anno_colloquio;
 		this.esito_colloquio = esito_colloquio;
-		this.impressioni = impressioni;
 		this.fonte_reperimento = fonte_reperimento;
 		this.costo_giornaliero = costo_giornaliero;
 		this.possibilita_lavorativa = possibilita_lavorativa;
@@ -55,7 +55,7 @@ public class Profilo
 		this.tech2 = tech2;
 		this.tech3 = tech3;
 		this.tech4 = tech4;
-		this.tech5 = tech5;
+		this.tech_campo_libero = tech_campo_libero;
 		this.lingua1 = lingua1;
 		this.lingua2 = lingua2;
 		this.lingua3 = lingua3;
@@ -102,6 +102,16 @@ public class Profilo
 	public void setRecapito(String recapito)
 	{
 		this.recapito = recapito;
+	}
+	
+	public void setEmail(String email)
+	{
+		this.email = email;
+	}
+	
+	public String getEmail()
+	{
+		return email;
 	}
 
 	public String getCitta_allocazione()
@@ -162,16 +172,6 @@ public class Profilo
 	public void setEsito_colloquio(String esito_colloquio)
 	{
 		this.esito_colloquio = esito_colloquio;
-	}
-
-	public String getImpressioni()
-	{
-		return impressioni;
-	}
-
-	public void setImpressioni(String impressioni)
-	{
-		this.impressioni = impressioni;
 	}
 
 	public String getFonte_reperimento()
@@ -254,14 +254,14 @@ public class Profilo
 		this.tech4 = tech4;
 	}
 
-	public String getTech5()
+	public String getTech_campo_libero()
 	{
-		return tech5;
+		return tech_campo_libero;
 	}
 
-	public void setTech5(String tech5)
+	public void setTech_campo_libero(String tech_campo_libero)
 	{
-		this.tech5 = tech5;
+		this.tech_campo_libero = tech_campo_libero;
 	}
 
 	public String getLingua1()

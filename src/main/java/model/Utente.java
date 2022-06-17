@@ -3,13 +3,15 @@ package model;
 public class Utente
 {
 	private int id;
+	private String nome_cognome;
 	private String email;
 	private String password;
 	
 	public Utente() {}
-	public Utente(int id, String email, String password)
+	public Utente(int id, String nome_cognome, String email, String password)
 	{
 		this.id = id;
+		this.nome_cognome = nome_cognome;
 		this.email = email;
 		this.password = password;
 	}
@@ -21,6 +23,14 @@ public class Utente
 	public void setId(int id)
 	{
 		this.id = id;
+	}
+	public String getNome_cognome()
+	{
+		return nome_cognome;
+	}
+	public void setNome_cognome(String nome_cognome)
+	{
+		this.nome_cognome = nome_cognome;
 	}
 	public String getEmail()
 	{
