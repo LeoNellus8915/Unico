@@ -359,15 +359,15 @@ function stampa_profilo()
 			document.getElementById("nome").value =  profilo[1];
 			document.getElementById("cognome").value =  profilo[2];
 			document.getElementById("numeroTelefono").value =  profilo[3];  // Controllo se profilo[] è null, se lo è campo vuoto
-			document.getElementById("citta").value = profilo[4];            // profilo[4]!=="null"?profilo[4]:"";
+			document.getElementById("email").value = profilo[4]
+			document.getElementById("citta").value = profilo[5];            // profilo[4]!=="null"?profilo[4]:"";
 			
-			document.getElementById("ruolo").value = profilo[5];
-			document.getElementById("competenza_principale").value = profilo[6];
+			document.getElementById("ruolo").value = profilo[6];
+			document.getElementById("competenza_principale").value = profilo[7];
 			
-			document.getElementById("data_colloquio").value = profilo[7];
-			document.getElementById("anno_colloquio").value = profilo[8];
-			document.getElementById("esito_colloquio").value = profilo[9];
-			document.getElementById("impressioni").value = profilo[10];
+			document.getElementById("data_colloquio").value = profilo[8];
+			document.getElementById("anno_colloquio").value = profilo[9];
+			document.getElementById("esito_colloquio").value = profilo[10];
 			
 			document.getElementById("fonte_reperimento").value = profilo[11];
 			
@@ -379,7 +379,7 @@ function stampa_profilo()
 			document.getElementById("tech_2").value = profilo[16];
 			document.getElementById("tech_3").value = profilo[17];
 			document.getElementById("tech_4").value = profilo[18];
-			document.getElementById("tech_5").value = profilo[19];
+			document.getElementById("tech_campo_libero").value = profilo[19];
 			
 			document.getElementById("lingua_1").value = profilo[20];
 			document.getElementById("lingua_2").value = profilo[21];
@@ -388,6 +388,7 @@ function stampa_profilo()
 			document.getElementById("competenze_totali").value = profilo[23];
 			document.getElementById("certificazioni").value = profilo[24];
 			document.getElementById("seniority").value = profilo[25];
+			
 			
 			localStorage.setItem("nome_cognome", profilo[1] + "_" + profilo[2]);
 			localStorage.setItem("array", profilo);
@@ -437,9 +438,9 @@ function genera_cv()
 	var nome_cognome = localStorage.getItem("nome_cognome");
 	var doc = new jsPDF();
 	
-	var categorie = ["Nome: ", "Cognome: ", "Recapito: ", "Citta' di Allocazione: ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
+	var categorie = ["Nome: ", "Cognome: ", "Recapito: ", "Email: ", "Citta' di Allocazione: ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
 	"Anno Colloquio: ", "Esito Colloquio: ", "Impressioni: ", "Fonte Reperimento: ", "Costo GG: ", "Possibilita' Lavorativa: ", "Skill: ",
-	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech5: ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
+	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech (Campo Libero): ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
 	"Seniority: "];
 	
 	str = localStorage.getItem("array");

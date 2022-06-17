@@ -1,13 +1,13 @@
 package model;
 
-public class Commenti
+public class Commento
 {
 	private int id;
 	private String commento;
 	
-	public Commenti () {}
+	public Commento () {}
 	
-	public Commenti (int id, String commento)
+	public Commento (int id, String commento)
 	{
 		this.id = id;
 		this.commento = commento;

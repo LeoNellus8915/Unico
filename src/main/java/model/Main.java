@@ -121,7 +121,6 @@ public class Main
 						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
 	{
 		Profilo profilo = new Profilo();
-		Commenti commento = new Commenti();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q = controllo.createQuery("select max(id) from Profilo");
@@ -155,15 +154,23 @@ public class Main
         profilo.setCompetenze_totali(competenze_totali);
         profilo.setCertificazioni(certificazioni);
         profilo.setSeniority(seniority);
-        
-        commento.setId(profilo.getId());
-        commento.setCommento(impressioni);
-        
-        controllo.save(commento);
         controllo.save(profilo);
         controllo.getTransaction().commit();
         controllo.close();
+        
+        salvaCommento(profilo.getId(), impressioni);
 	}
+	
+	public void salvaCommento(int id, String commento) {
+		Commento impressione = new Commento();
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		impressione.setId(id);
+		impressione.setCommento(commento);
+		controllo.save(impressione);
+		controllo.close();
+	}
+	
 	public List ricerca()
 	{
 		List profili = new ArrayList();

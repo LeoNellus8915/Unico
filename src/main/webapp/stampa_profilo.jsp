@@ -150,16 +150,20 @@
 							<div class="card-body">
 								<div class="container">
 									<div class="row">
-										<div class="col-md-3">
+										<div class="col-md-4">
 											Nome: <input type="text" id="nome" name="nome" style="width: 150px !important;">
 										</div>
-										<div class="col-md-3">
+										<div class="col-md-4">
 											Cognome: <input type="text" id="cognome" name="cognome" style="width: 150px !important;">
 										</div>
-										<div class="col-md-3">
+										
+										<div class="col-md-4">
 											Numero Telefono: <input type="text" id="numeroTelefono" name="recapito" style="width: 120px !important;">
 										</div>
-										<div class="col-md-3">
+										<div class="col-md-6">
+											Email: <input type="text" id="email" name="email" style="width: 150px !important;">
+										</div>
+										<div class="col-md-6">
 											Città: <input type="text" id="citta" name="citta_allocazione" style="width: 150px !important;">
 										</div>
 									</div> <!-- Fine Row -->
@@ -194,17 +198,14 @@
 							<div class="card-body">
 								<div class="container">
 									<div class="row">
-										<div class="col-md-3">
+										<div class="col-md-4">
 											Data Colloquio: <input type="text" id="data_colloquio" name="data_colloquio" style="width: 150px !important;">
 										</div>
-										<div class="col-md-3">
+										<div class="col-md-4">
 											Anno Colloquio: <input type="text" id="anno_colloquio" name="anno_colloquio" style="width: 150px !important;">
 										</div>
-										<div class="col-md-3">
+										<div class="col-md-4">
 											Esito Colloquio: <input type="text" id="esito_colloquio" name="esito_colloquio" style="width: 120px !important;">
-										</div>
-										<div class="col-md-3">
-											Impressioni: <input type="text" id="impressioni" name="impressioni" style="width: 150px !important;">
 										</div>
 									</div> <!-- Fine Row -->
 								</div> <!-- Fine Container -->
@@ -267,7 +268,7 @@
 											Tech4: <input type="text" id="tech_4" name="tech4" style="width: 200px !important;">
 										</div>
 										<div class="col-md-4">
-											Tech5: <input type="text" id="tech_5" name="tech5" style="width: 200px !important;">
+											Tech(Campo Libero): <input type="text" id="tech_campo_libero" name="tech_campo_libero" style="width: 200px !important;">
 										</div>
 									</div> <!-- Fine Row -->
 								</div> <!-- Fine Container -->
@@ -315,17 +316,33 @@
 								</div> <!-- Fine Container -->
 							</div> <!-- Fine Card Body-->	
 						</div> <!-- Fine Card -->
-		
+
+						<div class="card">
+							<div class="card-header">
+								<h4>Commenti</h4>
+							</div>
+							<div class="card-body">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-12">
+											Impressioni: <input type="text" id="impressioni" name="impressioni" style="width: 150px !important;">
+										</div>
+									</div> <!-- Fine Row -->
+								</div> <!-- Fine Container -->
+							</div> <!-- Fine Card Body-->	
+						</div> <!-- Fine Card -->
+									
 						<div class="col-md-12" style="text-align: center;">
-							<br> 
-							<input type="hidden" name="Servlet" value="aggiorna_cv">
-							<input type="submit" value="SALVA" style="padding: 5px 25px 5px 25px;"> <br>
-							<br>
-						</div>
-		
-					</div> <!-- Fine Column -->
-				</div> <!-- Fine Row Categorie -->
-			</form>
+										<br> <input type="hidden" name="Servlet"
+											value="aggiorna_cv"> <input type="submit"
+											value="SALVA" style="padding: 5px 25px 5px 25px;"> <br>
+										<br>
+									</div>
+
+								</div>
+								<!-- Fine Column -->
+							</div>
+							<!-- Fine Row Categorie --></form>
 			<br> <br>
 		</div> <!-- Fine Container Head -->
 		<br><br><br>
