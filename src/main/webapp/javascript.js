@@ -355,7 +355,6 @@ function stampa_profilo()
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", ");
 			document.getElementById("nome_cognome").innerHTML = profilo[1] + " " + profilo[2];  // Home > Ricerca > Nome&Cognome
-			localStorage.setItem("nome_cognome", profilo[1] + "_" + profilo[2]);
 			
 			document.getElementById("nome").value =  profilo[1];
 			document.getElementById("cognome").value =  profilo[2];
@@ -389,6 +388,9 @@ function stampa_profilo()
 			document.getElementById("competenze_totali").value = profilo[23];
 			document.getElementById("certificazioni").value = profilo[24];
 			document.getElementById("seniority").value = profilo[25];
+			
+			localStorage.setItem("nome_cognome", profilo[1] + "_" + profilo[2]);
+			localStorage.setItem("array", profilo);
 		}
 	}
 }
@@ -429,4 +431,27 @@ function scarica()
 	pdf.type="hidden";
 	document.getElementById("scarica_cv").appendChild(pdf);
 	document.getElementById(nome_cognome + "_pdf").click();
+}
+function genera_cv()
+{
+	var nome_cognome = localStorage.getItem("nome_cognome");
+	var doc = new jsPDF();
+	
+	var categorie = ["Nome: ", "Cognome: ", "Recapito: ", "Citta' di Allocazione: ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
+	"Anno Colloquio: ", "Esito Colloquio: ", "Impressioni: ", "Fonte Reperimento: ", "Costo GG: ", "Possibilita' Lavorativa: ", "Skill: ",
+	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech5: ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
+	"Seniority: "];
+	
+	str = localStorage.getItem("array");
+	a = str.split(",");
+	a.pop();
+	a.shift();
+	var c=10;
+	for(let i=0; i<a.length;i++){
+		if(a[i]!=""){
+			doc.text(categorie[i] + " " + a[i], 10, c);
+			c+=7;
+		}
+	}
+	doc.save(nome_cognome +  '_Cv.pdf')
 }

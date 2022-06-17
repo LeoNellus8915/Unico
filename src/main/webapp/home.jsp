@@ -93,7 +93,7 @@
 			    		</ul>
 			    	</div>
                 </div>
-                <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
+                <div class="col-md-8 offset-1 logo"><p class="home">Logo</p></div>
                 <div class="col-md-2" style="text-align: right; margin-top: 1%">
                     <form method="post" action="Servlet">
                     	<input type="hidden" name="Servlet" value="logout">

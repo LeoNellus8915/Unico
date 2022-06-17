@@ -58,7 +58,43 @@
     <body onload="certificazione_unica()">
         <div class="conteiner head">
             <div class="row header">
-                <div class="col-md-8 offset-1"><p class="home">Logo</p></div>
+            	<div class="col-md-1">
+                	<div id="hormenu"><!-- div che contiene il menu -->
+            			<ul> <!-- lista principale: definisce il menu nella sua interezza -->
+                			<li>
+			                	<img src="Immagini/trattini.png" width=120% height=80%>
+			                	<ul class="ordine">
+			                		<br>
+			                        <li class="ordine">
+                    					<p class="categorie">Modulo Presenze</p>
+                    				</li><br>
+			                        <li class="ordine">
+			                        	<a href="bustepaga.jsp"><p class="categorie">Buste Paga</p></a>
+                    				</li><br>
+			                        <li class="ordine">
+			                        	<a href="certificazione_unica.jsp"><p class="categorie">Certificazione Unica</p></a>
+                    				</li><br>
+			                        <li class="ordine">
+                    					<p class="categorie">Commesse</p>
+			                        </li><br>
+			                        <li class="ordine">
+                    					<p class="categorie">Certificazioni</p>
+			                        </li><br>
+			                        <li class="ordine">
+                    					<p class="categorie">Corso Sicurezza</p>	
+			                        </li><br>
+			                        <li class="ordine">
+                    					<p class="categorie">Visita Medica</p>
+			                        </li><br>
+			                        <li class="ordine">
+			                        	<a href="profilo&cv.jsp"><p class="categorie">Profilo & CV</p></a>
+			                        </li>
+                    			</ul>
+			                </li>
+			    		</ul>
+			    	</div>
+                </div>
+                <div class="col-md-8 offset-1 logo"><p class="home">Logo</p></div>
                 <div class="col-md-2" style="text-align: right; margin-top: 1%">
                     <form method="post" action="Servlet">
                     	<input type="hidden" name="Servlet" value="logout">

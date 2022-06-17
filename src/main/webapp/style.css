@@ -70,6 +70,10 @@ div.margin
 {
 	margin-left: 10%;
 }
+div.logo
+{
+	margin-top: 0.5%;
+}
 /*-------------------------------------*/
 input[type=submit]
 {
