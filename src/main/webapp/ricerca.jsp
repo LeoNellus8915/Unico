@@ -87,7 +87,7 @@
                     					<p class="categorie">Visita Medica</p>
 			                        </li><br>
 			                        <li class="ordine">
-			                        	<a href="profilo&cv.jsp"><p class="categorie">Profilo & CV</p></a>
+			                        	<a href="ricerca.jsp"><p class="categorie">Profilo & CV</p></a>
 			                        </li>
                     			</ul>
 			                </li>

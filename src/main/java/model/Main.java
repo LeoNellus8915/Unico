@@ -116,7 +116,7 @@ public class Main
 		return data;
 	}
 	public void salva (String nome, String cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
-						String anno_colloquio, String esito_colloquio, String impressioni, String fonte_reperimento, String costo_giornaliero,
+						String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
 	{
@@ -157,15 +157,19 @@ public class Main
         controllo.save(profilo);
         controllo.getTransaction().commit();
         controllo.close();
-        
-        salvaCommento(profilo.getId(), impressioni);
 	}
 	
-	public void salvaCommento(int id, String commento) {
+	public void salvaCommento(String commento, String utente, String profilo)
+	{
 		Commento impressione = new Commento();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		impressione.setId(id);
+		Query get_utente = controllo.createQuery("select id from Utente where email = '" + utente + "'");
+		Query get_profilo = controllo.createQuery("select id from Profilo where email = '" + profilo + "'");
+		List list_utente = get_utente.list();
+		List list_profilo = get_profilo.list();
+		impressione.setId_utente((Integer)list_utente.get(0));
+		impressione.setId_profilo((Integer)list_profilo.get(0));
 		impressione.setCommento(commento);
 		controllo.save(impressione);
 		controllo.close();

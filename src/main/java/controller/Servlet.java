@@ -25,8 +25,7 @@ public class Servlet extends HttpServlet
 		RequestDispatcher disp = null;
 		HttpSession session = request.getSession(true);
 		Main main = new Main();
-		String servlet = request.getParameter("Servlet");
-		System.out.println(servlet);
+		String servlet = request.getParameter("Servlet"); 
 		if (servlet.equals("login"))
 		{
 			String email = request.getParameter("email");
@@ -75,7 +74,6 @@ public class Servlet extends HttpServlet
 			String data_colloquio = request.getParameter("data_colloquio");
 			String anno_colloquio = request.getParameter("anno_colloquio");
 			String esito_colloquio = request.getParameter("esito_colloquio");
-			String impressioni = request.getParameter("impressioni");
 			String fonte_reperimento = request.getParameter("fonte_reperimento");
 			String costo_giornaliero = request.getParameter("costo_giornaliero");
 			String possibilita_lavorativa = request.getParameter("possibilita_lavorativa");
@@ -90,10 +88,13 @@ public class Servlet extends HttpServlet
 			String lingua3 = request.getParameter("lingua3");
 			String competenze_totali = request.getParameter("competenze_totali");
 			String certificazioni = request.getParameter("certificazioni");
-			String seniority = request.getParameter("seniority");	
-			main.salva(nome, cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio, impressioni,
+			String seniority = request.getParameter("seniority");
+			String impressioni = request.getParameter("impressioni");
+			main.salva(nome, cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
+			String utente = (String) session.getAttribute("Utente");
+			main.salvaCommento(impressioni, utente, email);
 			disp = request.getRequestDispatcher("home.jsp");
 			disp.forward(request, response);
 		}
@@ -129,10 +130,14 @@ public class Servlet extends HttpServlet
 			String lingua3 = request.getParameter("lingua3");
 			String competenze_totali = request.getParameter("competenze_totali");
 			String certificazioni = request.getParameter("certificazioni");
-			String seniority = request.getParameter("seniority");	
+			String seniority = request.getParameter("seniority");
+			String commento = request.getParameter("impressioni");
 			main.aggiorna_cv(nome, cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
+			
+			String utente = (String) session.getAttribute("Utente");
+			main.salvaCommento(commento, utente, email);
 			disp = request.getRequestDispatcher("stampa_profilo.jsp");
 			disp.forward(request, response);
 		}
