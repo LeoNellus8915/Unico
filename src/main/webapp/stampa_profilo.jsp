@@ -328,6 +328,10 @@
 											Impressioni: <input type="text" id="impressioni" name="impressioni" style="width: 150px !important;">
 										</div>
 									</div> <!-- Fine Row -->
+										<div class="row">
+           									<div id="commenti" class="col-md-6 offset-1"><br></div>
+            								<br><br>
+           								</div>
 								</div> <!-- Fine Container -->
 							</div> <!-- Fine Card Body-->	
 						</div> <!-- Fine Card -->

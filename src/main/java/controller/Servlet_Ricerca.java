@@ -25,7 +25,9 @@ public class Servlet_Ricerca extends HttpServlet
 		if (info[0].equals("stampa_profilo"))
 		{
 			List profili = main.ricercaProfilo(info[1]);
+			List commenti = main.ricercaCommenti(info[1]);
 			response.getWriter().println(profili);
+			response.getWriter().println(commenti);
 		}
 		if (info[0].equals("ricerca"))
 		{

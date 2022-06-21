@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -193,6 +194,26 @@ public class Main
         controllo.close();
         return profili;
 	}
+	
+	
+	public List ricercaCommenti(String id)
+	{
+		List commenti = new ArrayList();
+		Commento commento = new Commento();
+		commenti.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+        Query q = controllo.createQuery("Select commento from Commento where fk_profilo = " + id);
+        q.getResultList();
+        List lista = q.list();
+        for (Object object : lista) {
+			commenti.add(object);
+		}
+        commenti.add(" ");
+        controllo.close();
+        return commenti;
+	}
+	
 	public List ricercaProfilo(String id)
 	{
 		List profili = new ArrayList();
@@ -233,6 +254,8 @@ public class Main
         controllo.close();
         return profili;
 	}
+	
+	
 	public List filtra (String filtro)
 	{
 		List profili = new ArrayList();

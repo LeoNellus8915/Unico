@@ -389,6 +389,16 @@ function stampa_profilo()
 			document.getElementById("certificazioni").value = profilo[24];
 			document.getElementById("seniority").value = profilo[25];
 			
+			/*for(var i=0; i < profilo.length; i++){
+				console.log(profilo[i] + " " + i);
+			}*/
+			
+			for(var i=27; i < profilo.length-1; i++){
+			const paragrafo = document.createElement("p");
+			paragrafo.id = i;
+			paragrafo.innerText = profilo[i];
+			document.getElementById("commenti").appendChild(paragrafo);
+			}
 			
 			localStorage.setItem("nome_cognome", profilo[1] + "_" + profilo[2]);
 			localStorage.setItem("array", profilo);
