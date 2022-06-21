@@ -269,4 +269,64 @@ public class Main
 		q.executeUpdate();
 		controllo.close();
 	}
+	public List get_lingue()
+	{
+		List lingue = new ArrayList();
+		lingue.add(" ");
+		lingue.add("");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select lingua from Lingua");
+		List list = q.list();
+		for (int c=0; c<list.size(); c++)
+			lingue.add((String)list.get(c));
+		lingue.add(" ");
+		controllo.close();
+		return lingue;
+	}
+	public List get_seniority()
+	{
+		List senior = new ArrayList();
+		senior.add(" ");
+		senior.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select seniority from Seniority");
+		List list = q.list();
+		for (int c=0; c<list.size(); c++)
+			senior.add((String)list.get(c));
+		senior.add(" ");
+		controllo.close();
+		return senior;
+	}
+	public List get_skill()
+	{
+		List skill = new ArrayList();
+		skill.add(" ");
+		skill.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select skill from Skill");
+		List list = q.list();
+		for (int c=0; c<list.size(); c++)
+			skill.add((String)list.get(c));
+		skill.add(" ");
+		controllo.close();
+		return skill;
+	}
+	public List get_tech()
+	{
+		List tech = new ArrayList();
+		tech.add(" ");
+		tech.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select tech from Tech");
+		List list = q.list();
+		for (int c=0; c<list.size(); c++)
+			tech.add((String)list.get(c));
+		tech.add(" ");
+		controllo.close();
+		return tech;
+	}
 }

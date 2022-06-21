@@ -92,7 +92,7 @@
 	crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="menu_cascata()">
 	<div class="conteiner head">
 		<div class="row header">
 			<div class="col-md-1">
@@ -263,7 +263,7 @@
 					<h5>
 						<p>Possibilità Lavorativa</p>
 					</h5>
-					<input class="profilo" type="text" name="possibilita_lavorativa">
+					<input class="profilo" type="text" id="possibilita_lavorativa" name="possibilita_lavorativa">
 				</div>
 			</div>
 
@@ -273,14 +273,14 @@
 					<h5>
 						<p>Skill</p>
 					</h5>
-					<input class="profilo" type="text" name="skill">
+					<select name="skill" id="skill" class="cascata"></select>
 				</div>
 
 				<div class="col-md-9 offset-1 pad">
 					<h5>
 						<p>Tech</p>
 					</h5>
-					<input class="profilo" type="text" id="input_tech1" name="tech1">
+					<select name="tech1" id="input_tech1" class="cascata"></select>
 				</div>
 				<div class="col-md-1">
 					<p class="profilo"
@@ -291,7 +291,7 @@
 					<h5>
 						<p>Tech2</p>
 					</h5>
-					<input class="profilo" type="text" id="input_tech2" name="tech2">
+					<select name="tech2" id="input_tech2" class="cascata"></select>
 				</div>
 				<div id="Rem_tech2" class="col-md-1" style="display: none">
 					<p class="profilo"
@@ -306,7 +306,7 @@
 					<h5>
 						<p>Tech3</p>
 					</h5>
-					<input class="profilo" type="text" id="input_tech3" name="tech3">
+					<select name="tech3" id="input_tech3" class="cascata"></select>
 				</div>
 				<div id="Rem_tech3" class="col-md-1" style="display: none">
 					<p class="profilo"
@@ -321,7 +321,7 @@
 					<h5>
 						<p>Tech4</p>
 					</h5>
-					<input class="profilo" type="text" id="input_tech4" name="tech4">
+					<select name="tech4" id="input_tech4" class="cascata"></select>
 				</div>
 				<div id="Rem_tech4" class="col-md-1" style="display: none">
 					<p class="profilo"
@@ -351,21 +351,19 @@
 					<h5>
 						<p>Lingua1</p>
 					</h5>
-					<input class="profilo" type="text" name="lingua1">
+					<select name="lingua1" id="lingua1" class="cascata"></select>
 				</div>
 				<div class="col-md-4 pad">
 					<h5>
 						<p>Lingua2</p>
 					</h5>
-					<input class="profilo" type="text" id="input_lingua2"
-						name="lingua2">
+					<select name="lingua2" id="lingua2" class="cascata"></select>
 				</div>
 				<div class="col-md-4 pad">
 					<h5>
 						<p>Lingua3</p>
 					</h5>
-					<input class="profilo" type="text" id="input_lingua3"
-						name="lingua3">
+					<select name="lingua3" id="lingua3" class="cascata"></select>
 				</div>
 			</div>
 
@@ -388,7 +386,7 @@
 					<h5>
 						<p>Seniority</p>
 					</h5>
-					<input class="profilo" type="text" name="seniority">
+					<select name="seniority" id="seniority" class="cascata"></select>
 				</div>
 			</div>
 

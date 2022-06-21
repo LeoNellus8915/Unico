@@ -141,5 +141,25 @@ public class Servlet extends HttpServlet
 			disp = request.getRequestDispatcher("stampa_profilo.jsp");
 			disp.forward(request, response);
 		}
+		if (servlet.equals("get_skill"))
+		{
+			List skill = main.get_skill();
+			response.getWriter().println(skill);
+		}
+		if (servlet.equals("get_lingua"))
+		{
+			List lingue = main.get_lingue();
+			response.getWriter().println(lingue);
+		}
+		if (servlet.equals("get_seniority"))
+		{
+			List seniority = main.get_seniority();
+			response.getWriter().println(seniority);
+		}
+		if (servlet.equals("get_tech"))
+		{
+			List tech = main.get_tech();
+			response.getWriter().println(tech);
+		}
 	}
 }

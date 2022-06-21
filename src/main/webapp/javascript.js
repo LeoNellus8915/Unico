@@ -444,9 +444,9 @@ function genera_cv()
 	"Seniority: "];
 	
 	str = localStorage.getItem("array");
-	a = str.split(",");
-	a.pop();
-	a.shift();
+	array = str.split(",");
+	array.pop();
+	array.shift();
 	var c=10;
 	for(let i=0; i<a.length;i++){
 		if(a[i]!=""){
@@ -455,4 +455,140 @@ function genera_cv()
 		}
 	}
 	doc.save(nome_cognome +  '_Cv.pdf')
+}
+function menu_cascata()
+{
+	menu_cascata_skill();
+	menu_cascata_lingue();
+	menu_cascata_seniority();
+	menu_cascata_tech();
+}
+function menu_cascata_lingue()
+{
+	var lingue;   
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_lingua");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_lingua = xhttp.responseText;
+			lingue = risposta_lingua.split(", ");
+			lingue.pop();
+			lingue.shift();
+			for (var c = 0; c < lingue.length; c++)
+			{
+				const lingua = document.createElement("option");
+				lingua.value = lingue[c];
+				lingua.innerHTML = lingue[c];
+				document.getElementById('lingua1').appendChild(lingua);
+				
+				const lingua2 = document.createElement("option");
+				lingua2.value = lingue[c];
+				lingua2.innerHTML = lingue[c];
+				document.getElementById('lingua2').appendChild(lingua2);
+				
+				const lingua3 = document.createElement("option");
+				lingua3.value = lingue[c];
+				lingua3.innerHTML = lingue[c];
+				document.getElementById('lingua3').appendChild(lingua3);
+			}
+		}
+	}
+}
+function menu_cascata_seniority()
+{
+	var seniority;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_seniority");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_seniority = xhttp.responseText;
+			seniority = risposta_seniority.split(", ");
+			seniority.pop();
+			seniority.shift();
+			for (var c = 0; c < seniority.length; c++)
+			{
+				const senior = document.createElement("option");
+				senior.value = seniority[c];
+				senior.innerHTML = seniority[c];
+				document.getElementById('seniority').appendChild(senior);
+			}
+		}
+	}
+}
+function menu_cascata_skill()
+{
+	var skill;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_skill");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_skill = xhttp.responseText;
+			skill = risposta_skill.split(", ");
+			skill.pop();
+			skill.shift();
+			for (var c = 0; c < skill.length; c++)
+			{
+				const skills = document.createElement("option");
+				skills.value = skill[c];
+				skills.innerHTML = skill[c];
+				document.getElementById('skill').appendChild(skills);
+			}
+		}
+	}
+}
+function menu_cascata_tech()
+{
+	var tech;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_tech");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_tech = xhttp.responseText;
+			tech = risposta_tech.split(", ");
+			tech.pop();
+			tech.shift();
+			for (var c = 0; c < tech.length; c++)
+			{
+				const techs = document.createElement("option");
+				techs.value = tech[c];
+				techs.innerHTML = tech[c];
+				document.getElementById('input_tech1').appendChild(techs);
+				
+				const techs2 = document.createElement("option");
+				techs2.value = tech[c];
+				techs2.innerHTML = tech[c];
+				document.getElementById('input_tech2').appendChild(techs2);
+				
+				const techs3 = document.createElement("option");
+				techs3.value = tech[c];
+				techs3.innerHTML = tech[c];
+				document.getElementById('input_tech3').appendChild(techs3);
+				
+				const techs4 = document.createElement("option");
+				techs4.value = tech[c];
+				techs4.innerHTML = tech[c];
+				document.getElementById('input_tech4').appendChild(techs4);
+			}
+		}
+	}
 }

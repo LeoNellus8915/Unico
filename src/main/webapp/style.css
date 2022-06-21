@@ -187,3 +187,8 @@ li.ordine
 {
 	margin-top: 20;
 }
+select.cascata
+{
+	padding: 10;
+	border-radius: 10px;
+}
