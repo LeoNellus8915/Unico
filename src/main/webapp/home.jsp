@@ -57,7 +57,7 @@
     <body>
         <div class="conteiner head">
             <div class="row header">
-            	<div class="col-md-1">
+            	<div class="col-lg-1 col-md-1">
                 	<div id="hormenu"><!-- div che contiene il menu -->
             			<ul> <!-- lista principale: definisce il menu nella sua interezza -->
                 			<li>
@@ -93,8 +93,8 @@
 			    		</ul>
 			    	</div>
                 </div>
-                <div class="col-md-8 offset-1 logo"><p class="home">Logo</p></div>
-                <div class="col-md-2" style="text-align: right; margin-top: 1%">
+                <div class="col-lg-8 col-md-8 offset-1 logo"><p class="home">Logo</p></div>
+                <div class="col-lg-2 col-md-2" style="text-align: right; margin-top: 1%">
                     <form method="post" action="Servlet">
                     	<input type="hidden" name="Servlet" value="logout">
                     	<button class="esci">Esci</button>
@@ -102,41 +102,41 @@
                 </div>
             </div>
             <br>
-            <div class="row justify-content-center"><div class="col-md-9"><p class="utente">Home > <%String x = (String)session.getAttribute("Utente"); out.println(x);%></p></div></div>
+            <div class="row justify-content-center"><div class="col-lg-9 col-md-9"><p class="utente">Home > <%String x = (String)session.getAttribute("Utente"); out.println(x);%></p></div></div>
             <br><br>
             <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
-                <div class="col-lg-2 categorie">
+                <div class="col-lg-2 col-md-2 categorie">
                     <img src="Immagini/a.svg"><br><br><br>
                     <p class="categorie">Modulo Presenze</p>
                 </div>
-                <div class="col-lg-2 offset-1 categorie"><a href="bustepaga.jsp">
+                <div class="col-lg-2 col-md-2 offset-1 categorie"><a href="bustepaga.jsp">
                     <img src="Immagini/b.svg" style="margin-left: 10%"><br><br><br>
                     <p class="categorie">Buste Paga</p>
                 </a></div>
-                <div class="col-lg-2 offset-1 categorie"><a href="certificazione_unica.jsp">
+                <div class="col-lg-2 col-md-2 offset-1 categorie"><a href="certificazione_unica.jsp">
                     <img src="Immagini/c.svg"><br><br><br>
                     <p class="categorie">Certificazione Unica</p>
                 </a></div>
-                <div class="col-lg-2 offset-1 categorie">
+                <div class="col-lg-2 col-md-2 offset-1 categorie">
                     <img src="Immagini/d.svg"><br><br><br>
                     <p class="categorie">Commesse</p>
                 </div>
             </div>
             <br><br>
             <div class="row justify-content-center" style="text-align: center; padding: 10 65 0 65;">
-                <div class="col-md-2 categorie">
+                <div class="col-lg-2 col-md-2 categorie">
                     <img src="Immagini/e.svg"><br><br><br>
                     <p class="categorie">Certificazioni</p>
                 </div>
-                <div class="col-md-2 offset-1 categorie">
+                <div class="col-lg-2 col-md-2 offset-1 categorie">
                     <img src="Immagini/f.svg"><br><br><br>
                     <p class="categorie">Corso Sicurezza</p>
                 </div>
-                <div class="col-md-2 offset-1 categorie">
+                <div class="col-lg-2 col-md-2 offset-1 categorie">
                     <img src="Immagini/g.svg" style="margin-top: 7%"><br><br><br>
                     <p class="categorie" style="margin-left: 2%">Visita Medica</p>
                 </div>
-                <div class="col-md-2 offset-1 categorie"><a href="ricerca.jsp">
+                <div class="col-lg-2 col-md-2 offset-1 categorie"><a href="ricerca.jsp">
                     <img src="Immagini/h.svg" style="margin-top: 7%"><br><br><br>
                     <p class="categorie" style="margin-right: 2%">Profilo & CV</p>
                 </a></div>
