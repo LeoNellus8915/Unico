@@ -160,7 +160,7 @@ public class Main
         controllo.close();
 	}
 	
-	public void salvaCommento(String commento, String utente, String profilo)
+	public void salvaCommento(String commento, String data, String utente, String profilo)
 	{
 		Commento impressione = new Commento();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
@@ -169,9 +169,10 @@ public class Main
 		Query get_profilo = controllo.createQuery("select id from Profilo where email = '" + profilo + "'");
 		List list_utente = get_utente.list();
 		List list_profilo = get_profilo.list();
-		impressione.setId_utente((Integer)list_utente.get(0));
-		impressione.setId_profilo((Integer)list_profilo.get(0));
+		impressione.setFk_utente((Integer)list_utente.get(0));
+		impressione.setFk_profilo((Integer)list_profilo.get(0));
 		impressione.setCommento(commento);
+		impressione.setData(data);
 		controllo.save(impressione);
 		controllo.close();
 	}
@@ -196,7 +197,7 @@ public class Main
 	}
 	
 	
-	public List ricercaCommenti(String id)
+	public List ricercaCommenti(String id, String utente)
 	{
 		List commenti = new ArrayList();
 		Commento commento = new Commento();
@@ -205,12 +206,15 @@ public class Main
 		controllo.beginTransaction();
         Query q_commenti = controllo.createQuery("Select commento from Commento where fk_profilo = " + id);
         List lista_commenti = q_commenti.list();
-        Query q_data = controllo.createQuery("Select data_com from Commento where fk_profilo = " + id);
+        Query q_data = controllo.createQuery("Select data from Commento where fk_profilo = " + id);
         List lista_data = q_data.list();
-        Query q_user = controllo.createQuery("Select nome_cognome from Utente join Commento where Utente.id = Commento.fk_utente and Commento.fk_profilo = " + id);
+        Query q_utente = controllo.createQuery("Select id from Utente where email = '" + utente + "'");
+        q_utente.uniqueResult();
+        List lista_utente = q_utente.list();
+        Query q_user = controllo.createQuery("select u.nome_cognome from Commento c join Utente u on c.fk_utente = u.id where u.id = " + (Integer)lista_utente.get(0));
         List lista_user = q_user.list();
         for (int c=0; c<lista_commenti.size(); c++)
-        	commenti.add(lista_data.get(c) + "   " +  lista_commenti.get(c));  //lista_user.get(c) + "   " +
+        	commenti.add(lista_data.get(c) + "   " + lista_user.get(c) + "   " +  lista_commenti.get(c));  //lista_user.get(c) + "   " +
         commenti.add(" ");
         controllo.close();
         return commenti;

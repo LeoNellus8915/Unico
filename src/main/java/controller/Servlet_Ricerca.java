@@ -20,12 +20,14 @@ public class Servlet_Ricerca extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		Main main = new Main();
+		HttpSession session = request.getSession(true);
 		String servlet = request.getParameter("Servlet");
 		String[] info = servlet.split(",");
 		if (info[0].equals("stampa_profilo"))
 		{
+			String utente = (String)session.getAttribute("Utente");
 			List profili = main.ricercaProfilo(info[1]);
-			List commenti = main.ricercaCommenti(info[1]);
+			List commenti = main.ricercaCommenti(info[1], utente);
 			response.getWriter().println(profili);
 			response.getWriter().println(commenti);
 		}

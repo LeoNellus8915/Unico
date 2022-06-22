@@ -4,19 +4,19 @@ public class Commento
 {
 	private int id;
 	private String commento;
-	private int id_utente;
-	private int id_profilo;
-	private String data_com;
+	private int fk_utente;
+	private int fk_profilo;
+	private String data;
 	
 	public Commento () {}
 	
-	public Commento (int id, String commento, int id_utente, int id_profilo, String data_com)
+	public Commento (int id, String commento, int fk_utente, int fk_profilo, String data)
 	{
 		this.id = id;
 		this.commento = commento;
-		this.id_utente = id_utente;
-		this.id_profilo = id_profilo;
-		this.data_com = data_com;
+		this.fk_utente = fk_utente;
+		this.fk_profilo = fk_profilo;
+		this.data = data;
 	}
 	
 	public void setId(int id)
@@ -37,30 +37,31 @@ public class Commento
 		return commento;
 	}
 	
-	public void setId_utente(int id_utente)
+	public void setFk_utente(int fk_utente)
 	{
-		this.id_utente = id_utente;
+		this.fk_utente = fk_utente;
 	}
-	public int getId_utente()
+	public int getFk_utente()
 	{
-		return id_utente;
+		return fk_utente;
 	}
 	
-	public void setId_profilo(int id_profilo)
+	public void setFk_profilo(int fk_profilo)
 	{
-		this.id_profilo = id_profilo;
+		this.fk_profilo = fk_profilo;
 	}
-	public int getId_profilo()
+	public int getFk_profilo()
 	{
-		return id_profilo;
+		return fk_profilo;
 	}
 
-	public String getData_com() {
-		return data_com;
+	public String getData()
+	{
+		return data;
 	}
-
-	public void setData_com(String data_com) {
-		this.data_com = data_com;
+	public void setData(String data)
+	{
+		this.data = data;
 	}
 	
 }

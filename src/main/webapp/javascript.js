@@ -389,11 +389,12 @@ function stampa_profilo()
 			document.getElementById("certificazioni").value = profilo[24];
 			document.getElementById("seniority").value = profilo[25];
 			
-			for(var i=27; i < profilo.length-1; i++){
-			const paragrafo = document.createElement("p");
-			paragrafo.id = i;
-			paragrafo.innerText = profilo[i];
-			document.getElementById("commenti").appendChild(paragrafo);
+			for(var i=27; i < profilo.length-1; i++)
+			{
+				const paragrafo = document.createElement("p");
+				paragrafo.id = i;
+				paragrafo.innerText = profilo[i];
+				document.getElementById("commenti").appendChild(paragrafo);
 			}
 			
 			localStorage.setItem("nome_cognome", profilo[1] + "_" + profilo[2]);
@@ -445,7 +446,7 @@ function genera_cv()
 	var doc = new jsPDF();
 	
 	var categorie = ["Nome: ", "Cognome: ", "Recapito: ", "Email: ", "Citta' di Allocazione: ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
-	"Anno Colloquio: ", "Esito Colloquio: ", "Impressioni: ", "Fonte Reperimento: ", "Costo GG: ", "Possibilita' Lavorativa: ", "Skill: ",
+	"Anno Colloquio: ", "Esito Colloquio: ", "Fonte Reperimento: ", "Costo GG: ", "Possibilita' Lavorativa: ", "Skill: ",
 	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech (Campo Libero): ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
 	"Seniority: "];
 	
@@ -455,6 +456,9 @@ function genera_cv()
 	array.shift();
 	var c=10;
 	for(let i=0; i<array.length;i++){
+		if(array[i].startsWith(" ]")){
+			break;
+		}
 		if(array[i]!=""){
 			doc.text(categorie[i] + " " + array[i], 10, c);
 			c+=7;
@@ -462,6 +466,7 @@ function genera_cv()
 	}
 	doc.save(nome_cognome +  '_Cv.pdf')
 }
+
 function menu_cascata()
 {
 	menu_cascata_skill();

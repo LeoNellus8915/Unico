@@ -93,8 +93,11 @@ public class Servlet extends HttpServlet
 			main.salva(nome, cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
+			LocalDateTime now = LocalDateTime.now();
+			String data = (String)dtf.format(now);
 			String utente = (String) session.getAttribute("Utente");
-			main.salvaCommento(impressioni, utente, email);
+			main.salvaCommento(impressioni, data, utente, email);
 			disp = request.getRequestDispatcher("home.jsp");
 			disp.forward(request, response);
 		}
@@ -137,8 +140,11 @@ public class Servlet extends HttpServlet
 						competenze_totali, certificazioni, seniority);
 			
 			String utente = (String) session.getAttribute("Utente");
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");  
+			LocalDateTime now = LocalDateTime.now();
+			String data = (String)dtf.format(now);
 			if(!"".equals(commento)) {
-				main.salvaCommento(commento, utente, email);
+				main.salvaCommento(commento, data, utente, email);
 			}
 			disp = request.getRequestDispatcher("stampa_profilo.jsp");
 			disp.forward(request, response);
