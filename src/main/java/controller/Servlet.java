@@ -137,7 +137,9 @@ public class Servlet extends HttpServlet
 						competenze_totali, certificazioni, seniority);
 			
 			String utente = (String) session.getAttribute("Utente");
-			main.salvaCommento(commento, utente, email);
+			if(!"".equals(commento)) {
+				main.salvaCommento(commento, utente, email);
+			}
 			disp = request.getRequestDispatcher("stampa_profilo.jsp");
 			disp.forward(request, response);
 		}

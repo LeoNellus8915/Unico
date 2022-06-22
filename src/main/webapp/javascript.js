@@ -389,10 +389,6 @@ function stampa_profilo()
 			document.getElementById("certificazioni").value = profilo[24];
 			document.getElementById("seniority").value = profilo[25];
 			
-			/*for(var i=0; i < profilo.length; i++){
-				console.log(profilo[i] + " " + i);
-			}*/
-			
 			for(var i=27; i < profilo.length-1; i++){
 			const paragrafo = document.createElement("p");
 			paragrafo.id = i;
@@ -458,9 +454,9 @@ function genera_cv()
 	array.pop();
 	array.shift();
 	var c=10;
-	for(let i=0; i<a.length;i++){
-		if(a[i]!=""){
-			doc.text(categorie[i] + " " + a[i], 10, c);
+	for(let i=0; i<array.length;i++){
+		if(array[i]!=""){
+			doc.text(categorie[i] + " " + array[i], 10, c);
 			c+=7;
 		}
 	}

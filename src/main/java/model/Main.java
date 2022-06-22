@@ -203,12 +203,14 @@ public class Main
 		commenti.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-        Query q = controllo.createQuery("Select commento from Commento where fk_profilo = " + id);
-        q.getResultList();
-        List lista = q.list();
-        for (Object object : lista) {
-			commenti.add(object);
-		}
+        Query q_commenti = controllo.createQuery("Select commento from Commento where fk_profilo = " + id);
+        List lista_commenti = q_commenti.list();
+        Query q_data = controllo.createQuery("Select data_com from Commento where fk_profilo = " + id);
+        List lista_data = q_data.list();
+        Query q_user = controllo.createQuery("Select nome_cognome from Utente join Commento where Utente.id = Commento.fk_utente and Commento.fk_profilo = " + id);
+        List lista_user = q_user.list();
+        for (int c=0; c<lista_commenti.size(); c++)
+        	commenti.add(lista_data.get(c) + "   " +  lista_commenti.get(c));  //lista_user.get(c) + "   " +
         commenti.add(" ");
         controllo.close();
         return commenti;
