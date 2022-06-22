@@ -143,7 +143,7 @@ function bustepaga()
 {
 	var xhttp = new XMLHttpRequest();
 
-	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.open("POST", 'Servlet_Javascript', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("Servlet=" + "lettura_mese, ");
 	xhttp.onreadystatechange = function() {
@@ -219,7 +219,7 @@ async function invio(mese, pdf)
 		{
 			document.getElementById(pdf).click();
 
-			xhttp.open("POST", 'Servlet_Ricerca', true);
+			xhttp.open("POST", 'Servlet_Javascript', true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send("Servlet=" + "scrittura_mese," + mese);
 
@@ -238,7 +238,7 @@ function certificazione_unica()
 {
 	var xhttp = new XMLHttpRequest();
 
-	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.open("POST", 'Servlet_Javascript', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("Servlet=" + "lettura_anno, ");
 	xhttp.onreadystatechange = function() {
@@ -281,7 +281,7 @@ async function invio2(anno, pdf)
 		if (conferma == true) {
 			document.getElementById(pdf).click();
 
-			xhttp.open("POST", 'Servlet_Ricerca', true);
+			xhttp.open("POST", 'Servlet_Javascript', true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send("Servlet=" + "scrittura_anno," + anno);
 			await sleep(1000);
@@ -345,7 +345,7 @@ function stampa_profilo()
 
 	var xhttp = new XMLHttpRequest();
 
-	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.open("POST", 'Servlet_Javascript', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("Servlet=" + "stampa_profilo," + localStorage.getItem("dato"));
 	xhttp.onreadystatechange = function()
@@ -374,20 +374,12 @@ function stampa_profilo()
 			document.getElementById("costo_giornaliero").value = profilo[12];
 			document.getElementById("possibilita_lavorativa").value = profilo[13];
 			
-			document.getElementById("skill").value = profilo[14];
-			document.getElementById("tech").value = profilo[15];
-			document.getElementById("tech_2").value = profilo[16];
-			document.getElementById("tech_3").value = profilo[17];
-			document.getElementById("tech_4").value = profilo[18];
 			document.getElementById("tech_campo_libero").value = profilo[19];
-			
-			document.getElementById("lingua_1").value = profilo[20];
-			document.getElementById("lingua_2").value = profilo[21];
-			document.getElementById("lingua_3").value = profilo[22];
 			
 			document.getElementById("competenze_totali").value = profilo[23];
 			document.getElementById("certificazioni").value = profilo[24];
-			document.getElementById("seniority").value = profilo[25];
+			
+			menu_cascata2(profilo[14], profilo[15], profilo[16], profilo[17], profilo[18], profilo[20], profilo[21], profilo[22], profilo[25]);
 			
 			for(var i=27; i < profilo.length-1; i++)
 			{
@@ -407,7 +399,7 @@ function cerca()
 	var ricerca = document.getElementById("ricerca").value;
 	var xhttp = new XMLHttpRequest();
 
-	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.open("POST", 'Servlet_Javascript', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("Servlet=" + "ricerca," + ricerca);
 	xhttp.onreadystatechange = function()
@@ -598,6 +590,160 @@ function menu_cascata_tech()
 				const techs4 = document.createElement("option");
 				techs4.value = tech[c];
 				techs4.innerHTML = tech[c];
+				document.getElementById('input_tech4').appendChild(techs4);
+			}
+		}
+	}
+}
+function menu_cascata2(skill, tech1, tech2, tech3, tech4, lingua1, lingua2, lingia3, seniority)
+{
+	menu_cascata_skill2(skill);
+	menu_cascata_lingue2(lingua1, lingua2, lingia3);
+	menu_cascata_seniority2(seniority);
+	menu_cascata_tech2(tech1, tech2, tech3, tech4);
+}
+function menu_cascata_lingue2(lingua_1, lingua_2, lingua_3)
+{
+	var lingue;   
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_lingua");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_lingua = xhttp.responseText;
+			lingue = risposta_lingua.split(", ");
+			lingue.pop();
+			lingue.shift();
+			for (var c = 0; c < lingue.length; c++)
+			{
+				const lingua = document.createElement("option");
+				lingua.value = lingue[c];
+				lingua.innerHTML = lingue[c];
+				if (lingue[c] == lingua_1)
+					lingua.selected = true;
+				document.getElementById('lingua1').appendChild(lingua);
+				
+				const lingua2 = document.createElement("option");
+				lingua2.value = lingue[c];
+				lingua2.innerHTML = lingue[c];
+				if (lingue[c] == lingua_2)
+					lingua2.selected = true;
+				document.getElementById('lingua2').appendChild(lingua2);
+				
+				const lingua3 = document.createElement("option");
+				lingua3.value = lingue[c];
+				lingua3.innerHTML = lingue[c];
+				if (lingue[c] == lingua_3)
+					lingua3.selected = true;
+				document.getElementById('lingua3').appendChild(lingua3);
+			}
+		}
+	}
+}
+function menu_cascata_seniority2(seniority_1)
+{
+	var seniority;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_seniority");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_seniority = xhttp.responseText;
+			seniority = risposta_seniority.split(", ");
+			seniority.pop();
+			seniority.shift();
+			for (var c = 0; c < seniority.length; c++)
+			{
+				const senior = document.createElement("option");
+				senior.value = seniority[c];
+				senior.innerHTML = seniority[c];
+				if (seniority[c] == seniority_1)
+					senior.selected = true;
+				document.getElementById('seniority').appendChild(senior);
+			}
+		}
+	}
+}
+function menu_cascata_skill2(skill_1)
+{
+	var skill;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_skill");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_skill = xhttp.responseText;
+			skill = risposta_skill.split(", ");
+			skill.pop();
+			skill.shift();
+			for (var c = 0; c < skill.length; c++)
+			{
+				const skills = document.createElement("option");
+				skills.value = skill[c];
+				skills.innerHTML = skill[c];
+				if (skill[c] == skill_1)
+					skills.selected = true;
+				document.getElementById('skill').appendChild(skills);
+			}
+		}
+	}
+}
+function menu_cascata_tech2(tech_1, tech_2, tech_3, tech_4)
+{
+	var tech;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_tech");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_tech = xhttp.responseText;
+			tech = risposta_tech.split(", ");
+			tech.pop();
+			tech.shift();
+			for (var c = 0; c < tech.length; c++)
+			{
+				const techs = document.createElement("option");
+				techs.value = tech[c];
+				techs.innerHTML = tech[c];
+				if (tech[c] == tech_1)
+					techs.selected = true;
+				document.getElementById('input_tech1').appendChild(techs);
+				
+				const techs2 = document.createElement("option");
+				techs2.value = tech[c];
+				techs2.innerHTML = tech[c];
+				if (tech[c] == tech_2)
+					techs2.selected = true;
+				document.getElementById('input_tech2').appendChild(techs2);
+				
+				const techs3 = document.createElement("option");
+				techs3.value = tech[c];
+				techs3.innerHTML = tech[c];
+				if (tech[c] == tech_3)
+					techs3.selected = true;
+				document.getElementById('input_tech3').appendChild(techs3);
+				
+				const techs4 = document.createElement("option");
+				techs4.value = tech[c];
+				techs4.innerHTML = tech[c];
+				if (tech[c] == tech_4)
+					techs4.selected = true;
 				document.getElementById('input_tech4').appendChild(techs4);
 			}
 		}

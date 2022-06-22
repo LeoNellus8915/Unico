@@ -11,17 +11,17 @@
   	<servlet-class>controller.Servlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Servlet_Ricerca</servlet-name>
-  	<display-name>Servlet_Ricerca</display-name>
+  	<servlet-name>Servlet_Javascript</servlet-name>
+  	<display-name>Servlet_Javascript</display-name>
   	<description></description>
-  	<servlet-class>controller.Servlet_Ricerca</servlet-class>
+  	<servlet-class>controller.Servlet_Javascript</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Servlet</servlet-name>
   	<url-pattern>/Servlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Servlet_Ricerca</servlet-name>
-  	<url-pattern>/Servlet_Ricerca</url-pattern>
+  	<servlet-name>Servlet_Javascript</servlet-name>
+  	<url-pattern>/Servlet_Javascript</url-pattern>
   </servlet-mapping>
 </web-app>

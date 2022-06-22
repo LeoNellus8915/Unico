@@ -253,19 +253,19 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-md-4">
-											Skill: <input type="text" id="skill" name="skill" style="width: 200px !important;">
+											Skill: <select name="skill" id="skill" class="cascata"></select>
 										</div>
 										<div class="col-md-4">
-											Tech: <input type="text" id="tech" name="tech1" style="width: 200px !important;">
+											Tech: <select name="tech1" id="input_tech1" class="cascata"></select>
 										</div>
 										<div class="col-md-4">
-											Tech2: <input type="text" id="tech_2" name="tech2" style="width: 200px !important;">
+											Tech2: <select name="tech2" id="input_tech2" class="cascata"></select>
 										</div>
 										<div class="col-md-4">
-											Tech3: <input type="text" id="tech_3" name="tech3" style="width: 200px !important;">
+											Tech3: <select name="tech3" id="input_tech3" class="cascata"></select>
 										</div>
 										<div class="col-md-4">
-											Tech4: <input type="text" id="tech_4" name="tech4" style="width: 200px !important;">
+											Tech4: <select name="tech4" id="input_tech4" class="cascata"></select>
 										</div>
 										<div class="col-md-4">
 											Tech(Campo Libero): <input type="text" id="tech_campo_libero" name="tech_campo_libero" style="width: 200px !important;">
@@ -283,13 +283,13 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-md id="div_lingua_1">
-											Lingua1: <input type="text" id="lingua_1" name="lingua1" style="width: 200px !important;">
+											Lingua1: <select name="lingua1" id="lingua1" class="cascata"></select>
 										</div>
 										<div class="col-md id="div_lingua_2">
-											Lingua2: <input type="text" id="lingua_2" name="lingua2" style="width: 200px !important;">
+											Lingua2: <select name="lingua2" id="lingua2" class="cascata"></select>
 										</div>
 										<div class="col-md id="div_lingua_3">
-											Lingua3: <input type="text" id="lingua_3" name="lingua3" style="width: 200px !important;">
+											Lingua3: <select name="lingua3" id="lingua3" class="cascata"></select>
 										</div>
 									</div> <!-- Fine Row -->
 								</div> <!-- Fine Container -->
@@ -310,7 +310,7 @@
 											Certificazioni: <input type="text" id="certificazioni" name="certificazioni" style="width: 200px !important;">
 										</div>
 										<div class="col-md">
-											Seniority: <input type="text" id="seniority" name="seniority" style="width: 200px !important;">
+											Seniority: <select name="seniority" id="seniority" class="cascata"></select>
 										</div>
 									</div> <!-- Fine Row -->
 								</div> <!-- Fine Container -->
