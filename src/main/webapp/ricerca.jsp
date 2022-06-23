@@ -56,7 +56,7 @@
     </head>
 
     <body onload="ricerca()">
-        <div class="conteiner head"">
+        <div class="conteiner head">
             <div class="row header">
             	<div class="col-md-1">
                 	<div id="hormenu"><!-- div che contiene il menu -->

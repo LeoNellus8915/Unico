@@ -169,5 +169,10 @@ public class Servlet extends HttpServlet
 			List tech = main.get_tech();
 			response.getWriter().println(tech);
 		}
+		if (servlet.equals("get_esito_colloquio"))
+		{
+			List esito_colloquio = main.get_esito_colloquio();
+			response.getWriter().println(esito_colloquio);
+		}
 	}
 }

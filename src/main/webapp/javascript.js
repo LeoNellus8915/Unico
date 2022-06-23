@@ -1,144 +1,3 @@
-function posizione()
-{
-	if (document.getElementById("posizione").style.display == "none")
-	{
-		document.getElementById("posizione").removeAttribute('style');
-		document.getElementById("skill").removeAttribute('style');
-		document.getElementById("competenza").removeAttribute('style');
-		document.getElementById("bottone_posizione").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("posizione").style.display = "none";
-		document.getElementById("skill").style.display = "none";
-		document.getElementById("competenza").style.display = "none";
-		document.getElementById("bottone_posizione").removeAttribute('style');
-	}
-}
-function colloquio()
-{
-	if (document.getElementById("colloquio").style.display == "none")
-	{
-		document.getElementById("colloquio").removeAttribute('style');
-		document.getElementById("data").removeAttribute('style');
-		document.getElementById("anno").removeAttribute('style');
-		document.getElementById("esito").removeAttribute('style');
-		document.getElementById("impressioni").removeAttribute('style');
-		document.getElementById("bottone_colloquio").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("colloquio").style.display = "none";
-		document.getElementById("data").style.display = "none";
-		document.getElementById("anno").style.display = "none";
-		document.getElementById("esito").style.display = "none";
-		document.getElementById("impressioni").style.display = "none";
-		document.getElementById("bottone_colloquio").removeAttribute('style');
-	}
-}
-function candidatura()
-{
-	if (document.getElementById("candidatura").style.display == "none") 
-	{
-		document.getElementById("candidatura").removeAttribute('style');
-		document.getElementById("fonte").removeAttribute('style');
-		document.getElementById("bottone_candidatura").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("candidatura").style.display = "none"
-		document.getElementById("fonte").style.display = "none";
-		document.getElementById("bottone_candidatura").removeAttribute('style');
-	}
-}
-function costo_impiego()
-{
-	if (document.getElementById("costo_impiego").style.display == "none")
-	{
-		document.getElementById("costo_impiego").removeAttribute('style');
-		document.getElementById("cost").removeAttribute('style');
-		document.getElementById("possibilita").removeAttribute('style');
-		document.getElementById("bottone_costo_impiego").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("costo_impiego").style.display = "none"
-		document.getElementById("cost").style.display = "none";
-		document.getElementById("possibilita").style.display = "none";
-		document.getElementById("bottone_costo_impiego").removeAttribute('style');
-	}
-}
-function skill_tech()
-{
-	if (document.getElementById("skill_tech").style.display == "none")
-	{
-		document.getElementById("skill_tech").removeAttribute('style');
-		document.getElementById("skill2").removeAttribute('style');
-		document.getElementById("tech1").removeAttribute('style');
-		document.getElementById("tech2").removeAttribute('style');
-		document.getElementById("tech3").removeAttribute('style');
-		document.getElementById("tech4").removeAttribute('style');
-		document.getElementById("tech5").removeAttribute('style');
-		document.getElementById("bottone_skill_tech").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("skill_tech").style.display = "none"
-		document.getElementById("skill2").style.display = "none";
-		document.getElementById("tech1").style.display = "none";
-		document.getElementById("tech2").style.display = "none";
-		document.getElementById("tech3").style.display = "none";
-		document.getElementById("tech4").style.display = "none";
-		document.getElementById("tech5").style.display = "none";
-		document.getElementById("bottone_skill_tech").removeAttribute('style');
-	}
-}
-function lingua()
-{
-	if (document.getElementById("lingua").style.display == "none")
-	{
-		document.getElementById("lingua").removeAttribute('style');
-		document.getElementById("lang1").removeAttribute('style');
-		document.getElementById("lang2").removeAttribute('style');
-		document.getElementById("lang3").removeAttribute('style');
-		document.getElementById("bottone_lingua").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("lingua").style.display = "none"
-		document.getElementById("lang1").style.display = "none";
-		document.getElementById("lang2").style.display = "none";
-		document.getElementById("lang3").style.display = "none";
-		document.getElementById("bottone_lingua").removeAttribute('style');
-	}
-}
-function persona()
-{
-	if (document.getElementById("persona").style.display == "none")
-	{
-		document.getElementById("persona").removeAttribute('style');
-		document.getElementById("comp").removeAttribute('style');
-		document.getElementById("certificazioni").removeAttribute('style');
-		document.getElementById("seniority").removeAttribute('style');
-		document.getElementById("bottone_persona").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("persona").style.display = "none"
-		document.getElementById("comp").style.display = "none";
-		document.getElementById("certificazioni").style.display = "none";
-		document.getElementById("seniority").style.display = "none";
-		document.getElementById("bottone_persona").removeAttribute('style');
-	}
-}
-function controlla()
-{
-	var e1 = document.getElementById("password").value;
-	var e2 = document.getElementById("password2").value;
-	if (e1 != e2) {
-		alert('Le password non coincidono!');
-	}
-}
 function bustepaga()
 {
 	var xhttp = new XMLHttpRequest();
@@ -204,6 +63,8 @@ function bustepaga()
 		}
 	}
 }
+
+
 async function invio(mese, pdf)
 {
 	var xhttp = new XMLHttpRequest();
@@ -230,10 +91,14 @@ async function invio(mese, pdf)
 	else
 		document.getElementById(pdf).click();
 }
+
+
 function sleep(ms)
 {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
 function certificazione_unica()
 {
 	var xhttp = new XMLHttpRequest();
@@ -267,6 +132,8 @@ function certificazione_unica()
 		}
 	}
 }
+
+
 async function invio2(anno, pdf)
 {
 	var xhttp = new XMLHttpRequest();
@@ -291,6 +158,8 @@ async function invio2(anno, pdf)
 	else
 		document.getElementById(pdf).click();
 }
+
+
 function add(div, controllo, bottone, remove)
 {
 	var dato = document.forms["profilo"][controllo].value;
@@ -302,6 +171,8 @@ function add(div, controllo, bottone, remove)
 			document.getElementById(bottone).removeAttribute('style');
 	}
 }
+
+
 function remove(input, div, piu, meno)
 {
 	document.getElementById(input).value = '';
@@ -340,6 +211,8 @@ function ricerca()
 		}
 	}
 }
+
+
 function stampa_profilo()
 {
 
@@ -379,7 +252,7 @@ function stampa_profilo()
 			document.getElementById("competenze_totali").value = profilo[23];
 			document.getElementById("certificazioni").value = profilo[24];
 			
-			menu_cascata2(profilo[14], profilo[15], profilo[16], profilo[17], profilo[18], profilo[20], profilo[21], profilo[22], profilo[25]);
+			menu_cascata2(profilo[14], profilo[15], profilo[16], profilo[17], profilo[18], profilo[20], profilo[21], profilo[22], profilo[25], profilo[10]);
 			
 			for(var i=27; i < profilo.length-1; i++)
 			{
@@ -394,6 +267,8 @@ function stampa_profilo()
 		}
 	}
 }
+
+
 function cerca()
 {
 	var ricerca = document.getElementById("ricerca").value;
@@ -421,6 +296,8 @@ function cerca()
 		}
 	}
 }
+
+
 function scarica()
 {
 	var nome_cognome = localStorage.getItem("nome_cognome");
@@ -432,6 +309,8 @@ function scarica()
 	document.getElementById("scarica_cv").appendChild(pdf);
 	document.getElementById(nome_cognome + "_pdf").click();
 }
+
+
 function genera_cv()
 {
 	var nome_cognome = localStorage.getItem("nome_cognome");
@@ -459,13 +338,17 @@ function genera_cv()
 	doc.save(nome_cognome +  '_Cv.pdf')
 }
 
+
 function menu_cascata()
 {
 	menu_cascata_skill();
 	menu_cascata_lingue();
 	menu_cascata_seniority();
 	menu_cascata_tech();
+	menu_cascata_esito_colloquio()
 }
+
+
 function menu_cascata_lingue()
 {
 	var lingue;   
@@ -502,6 +385,8 @@ function menu_cascata_lingue()
 		}
 	}
 }
+
+
 function menu_cascata_seniority()
 {
 	var seniority;   
@@ -528,6 +413,8 @@ function menu_cascata_seniority()
 		}
 	}
 }
+
+
 function menu_cascata_skill()
 {
 	var skill;   
@@ -554,6 +441,36 @@ function menu_cascata_skill()
 		}
 	}
 }
+
+
+function menu_cascata_esito_colloquio()
+{
+	var esito_colloqui;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_esito_colloquio");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_esito_colloqui = xhttp.responseText;
+			esito_colloqui = risposta_esito_colloqui.split(", ");
+			esito_colloqui.pop();
+			esito_colloqui.shift();
+			for (var c = 0; c < esito_colloqui.length; c++)
+			{
+				const esito_colloquio = document.createElement("option");
+				esito_colloquio.value = esito_colloqui[c];
+				esito_colloquio.innerHTML = esito_colloqui[c];
+				document.getElementById('esito_colloquio').appendChild(esito_colloquio);
+			}
+		}
+	}
+}
+
+
 function menu_cascata_tech()
 {
 	var tech;   
@@ -595,13 +512,18 @@ function menu_cascata_tech()
 		}
 	}
 }
-function menu_cascata2(skill, tech1, tech2, tech3, tech4, lingua1, lingua2, lingia3, seniority)
+
+
+function menu_cascata2(skill, tech1, tech2, tech3, tech4, lingua1, lingua2, lingia3, seniority, esito_colloquio_1)
 {
 	menu_cascata_skill2(skill);
 	menu_cascata_lingue2(lingua1, lingua2, lingia3);
 	menu_cascata_seniority2(seniority);
 	menu_cascata_tech2(tech1, tech2, tech3, tech4);
+	menu_cascata_esito_colloquio2(esito_colloquio_1);
 }
+
+
 function menu_cascata_lingue2(lingua_1, lingua_2, lingua_3)
 {
 	var lingue;   
@@ -644,6 +566,8 @@ function menu_cascata_lingue2(lingua_1, lingua_2, lingua_3)
 		}
 	}
 }
+
+
 function menu_cascata_seniority2(seniority_1)
 {
 	var seniority;   
@@ -672,6 +596,8 @@ function menu_cascata_seniority2(seniority_1)
 		}
 	}
 }
+
+
 function menu_cascata_skill2(skill_1)
 {
 	var skill;   
@@ -700,6 +626,37 @@ function menu_cascata_skill2(skill_1)
 		}
 	}
 }
+
+
+function menu_cascata_esito_colloquio2(esito_colloquio_1)
+{
+	var esito_colloqui;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_esito_colloquio");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_esito_colloqui = xhttp.responseText;
+			esito_colloqui = risposta_esito_colloqui.split(", ");
+			esito_colloqui.pop();
+			esito_colloqui.shift();
+			for (var c = 0; c < esito_colloqui.length; c++)
+			{
+				const esito_colloquio = document.createElement("option");
+				esito_colloquio.value = esito_colloqui[c];
+				esito_colloquio.innerHTML = esito_colloqui[c];
+				if (esito_colloqui[c] == esito_colloquio_1)
+					esito_colloquio.selected = true;
+				document.getElementById('esito_colloquio').appendChild(esito_colloquio);
+			}
+		}
+	}
+}
+
 function menu_cascata_tech2(tech_1, tech_2, tech_3, tech_4)
 {
 	var tech;   
@@ -749,3 +706,5 @@ function menu_cascata_tech2(tech_1, tech_2, tech_3, tech_4)
 		}
 	}
 }
+
+

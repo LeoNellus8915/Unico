@@ -205,7 +205,7 @@
 											Anno Colloquio: <input type="text" id="anno_colloquio" name="anno_colloquio" style="width: 150px !important;">
 										</div>
 										<div class="col-md-4">
-											Esito Colloquio: <input type="text" id="esito_colloquio" name="esito_colloquio" style="width: 120px !important;">
+											Esito Colloquio: <select name="esito_colloquio" id="esito_colloquio" class="cascata"></select>
 										</div>
 									</div> <!-- Fine Row -->
 								</div> <!-- Fine Container -->

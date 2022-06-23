@@ -234,7 +234,7 @@
 					<h5>
 						<p>Esito Colloquio</p>
 					</h5>
-					<input class="profilo" type="text" name="esito_colloquio">
+					<select name="tech1" id="esito_colloquio" class="cascata"></select>
 				</div>
 			</div>
 

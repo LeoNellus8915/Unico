@@ -358,4 +358,19 @@ public class Main
 		controllo.close();
 		return tech;
 	}
+	public List get_esito_colloquio()
+	{
+		List esito_colloquio = new ArrayList();
+		esito_colloquio.add(" ");
+		esito_colloquio.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select esito_colloquio from Esito_Colloquio");
+		List list = q.list();
+		for (int c=0; c<list.size(); c++)
+			esito_colloquio.add((String)list.get(c));
+		esito_colloquio.add(" ");
+		controllo.close();
+		return esito_colloquio;
+	}
 }
