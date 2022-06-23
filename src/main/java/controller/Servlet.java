@@ -19,7 +19,7 @@ import model.Main;
 public class Servlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
-
+	//miao
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		RequestDispatcher disp = null;
